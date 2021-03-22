@@ -4,4 +4,4 @@ Adam: Yes!
 Amber:Yes Yes
 Bria:
 Eli:
-Nusi:
+Nusi: YEAHHH!!
