@@ -18,6 +18,6 @@ ZenHub: https://app.zenhub.com/workspaces/group-2-bracketeer-scrum-60589eced9231
 
 GitHub: https://github.com/bbradleyX/Group-2-Bracketeer.git
 
-Diagrams: https://drive.google.com/file/d/1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL/view?usp=sharing
+Diagrams:https://app.diagrams.net/#G1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL
 
 Project Folder (Google Drive): https://drive.google.com/drive/folders/1OIzB6NRB93VdPahTLLmjbHnbeGQwexo-?usp=sharing
