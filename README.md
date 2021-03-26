@@ -22,4 +22,4 @@ Diagrams:https://app.diagrams.net/#G1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL
 
 Project Folder (Google Drive): https://drive.google.com/drive/folders/1OIzB6NRB93VdPahTLLmjbHnbeGQwexo-?usp=sharing
 
-Sprint Goal: make sure players are in events and see their schedules in order to fix time conflicts
+Sprint Goal 1: make sure players are in events and see their schedules in order to fix time conflicts
