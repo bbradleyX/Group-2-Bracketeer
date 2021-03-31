@@ -32,4 +32,12 @@ public class Player {
     public Pair<Double, Double> getSchedule() {
         ;
     }
+    
+    /**
+     * Changes the current player Time  
+     * @throws IllegalArgumentException if currentTime is the same a newTime
+     */
+    public void modifySchedules(double currentTime, double newTime){
+        
+    }
 }
