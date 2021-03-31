@@ -40,4 +40,11 @@ public class Player {
     public void modifySchedules(double currentTime, double newTime){
         
     }
+
+     /**
+     * search the player list to find the player to view schedule  
+     */
+    public void viewSchedules(Player player){
+        
+    }
 }

@@ -49,4 +49,9 @@ public class PlayerTest {
     void modifySchedulesTest(){
         
     }
+
+    @Test 
+    void viewSchedulesTest(){
+        
+    }
 }
