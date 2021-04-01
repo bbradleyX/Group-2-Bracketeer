@@ -30,6 +30,9 @@ public class Player {
         if (name.length() < 1) {
             return false;
         }
+        if (ID.length() != 4) {
+            return false;
+        }
         for (int i = 0; i < ID.length(); i++) {
             if ((ID.charAt(i) < 48) || (ID.charAt(i) > 57)) {
                 return false;
