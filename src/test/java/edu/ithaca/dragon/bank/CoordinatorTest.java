@@ -3,6 +3,9 @@ package edu.ithaca.dragon.bank;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
 public class CoordinatorTest {
 
     @Test
@@ -17,4 +20,15 @@ public class CoordinatorTest {
     playerList.add(c);
     playerList.add(d);
     */}
+
+    @Test
+    void isTimeConflict(){
+        Player a = new Player("a", "1234", 2.0, 3.0);
+        Coordinator newCoord = new Coordinator("2345");
+        assertEquals(true, newCoord.isTimeconflict(a.getSchedule(), 2.0));
+        assertEquals(false, newCoord.isTimeconflict(a.getSchedule(), 1.0));
+        assertEquals(false, newCoord.isTimeconflict(a.getSchedule(), 5.0));
+        assertEquals(false, newCoord.isTimeconflict(a.getSchedule(), 13.0));
+        
+    }
 }
