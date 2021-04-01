@@ -30,24 +30,23 @@ public class Coordinator {
     }
 
     //This method creates a tournament and adds it to the list. May need additional parameters for teams participating
-    public Void createTournament() {
+    public void createTournament() {
 
-        return null;
     }
 
      //This method removes a tournament and adds it to the list. Needs parameter for selecting which tournament to remove
-    public Void removeTournament() {
-        return null;
+    public void removeTournament() {
+
     }
 
       //This method makes a team? might need an additional parameter for teamlist or some connection to team in diagram
-      public Void createTeam() {
-        return null;
+      public void createTeam() {
+
     }
 
        //this method creates a bracket for a tournament
-       public Void createBracket(Tournament tournament) {
-        return null;
+       public void createBracket(Tournament tournament) {
+           
     }
 
       //This methods sees if any players have a time conflict

@@ -25,8 +25,8 @@ public class CoordinatorTest {
     void isTimeConflict(){
         Player a = new Player("a", "1234", 2.0, 3.0);
         Coordinator newCoord = new Coordinator("2345");
-        assertEquals(true, newCoord.isTimeconflict(a.getSchedule(), 2.0));
-        assertEquals(false, newCoord.isTimeconflict(a.getSchedule(), 1.0));
+        assertEquals(true, newCoord.isTimeconflict(a.getSchedule(), 2.0)); //Border case: The time must be between the pair time for the player
+        assertEquals(false, newCoord.isTimeconflict(a.getSchedule(), 1.0)); //Border case: It can't be below the pair time
         assertEquals(false, newCoord.isTimeconflict(a.getSchedule(), 5.0));
         assertEquals(false, newCoord.isTimeconflict(a.getSchedule(), 13.0));
         
