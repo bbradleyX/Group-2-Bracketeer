@@ -37,14 +37,9 @@ public class Player {
      * Changes the current player Time  
      * @throws IllegalArgumentException if currentTime is the same a newTime
      */
-    public void modifySchedules(double currentTime, double newTime){
+    public void modifySchedules(double startTime, double endTime){
         
     }
 
-     /**
-     * search the player list to find the player to view schedule  
-     */
-    public void viewSchedules(Player player){
-        
-    }
+   
 }

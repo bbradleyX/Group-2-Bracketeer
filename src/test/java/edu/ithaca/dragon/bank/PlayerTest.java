@@ -47,11 +47,9 @@ public class PlayerTest {
 
     @Test 
     void modifySchedulesTest(){
+        Player amber = new Player("Amber", "2468", 8.0, 10.0);
         
+
     }
 
-    @Test 
-    void viewSchedulesTest(){
-        
-    }
 }
