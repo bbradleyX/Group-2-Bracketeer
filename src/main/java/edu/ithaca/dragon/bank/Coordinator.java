@@ -1,6 +1,6 @@
+package edu.ithaca.dragon.bank;
 import java.util.HashMap;
-
-import jdk.internal.net.http.common.Pair;
+import java.util.Random;
 
 public class Coordinator {
     private String ID;
@@ -15,40 +15,41 @@ public class Coordinator {
      * @throws IllegalArgumentException for any arguments that violate the above rules
      */
 
-    public Constructor(String ID) throws IllegalArgumentException {
-        ;
+    public Coordinator(String ID) throws IllegalArgumentException {
+        this.ID = ID;
     }
 
     public static boolean validateArguments(String name, String ID, double startTime) {
-        ;   
+        return false;   
     }
 
     public String getID() {
-        ;
+        return ID;
     }
 
     //This method creates a tournament and adds it to the list. May need additional parameters for teams participating
     public Void createTournament() {
-        ;
+
+        return null;
     }
 
      //This method removes a tournament and adds it to the list. Needs parameter for selecting which tournament to remove
     public Void removeTournament() {
-        ;
+        return null;
     }
 
       //This method makes a team? might need an additional parameter for teamlist or some connection to team in diagram
       public Void createTeam() {
-        ;
+        return null;
     }
 
        //this method creates a bracket for a tournament
        public Void createBracket(Tournament tournament) {
-        ;
+        return null;
     }
 
       //This methods sees if any players have a time conflict
       public boolean isTimeconflict() {
-        ;
+        return false;
     }
 }

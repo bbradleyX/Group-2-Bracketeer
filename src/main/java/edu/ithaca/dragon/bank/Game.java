@@ -1,10 +1,12 @@
-import jdk.internal.net.http.common.Pair;
+package edu.ithaca.dragon.bank;
+//import jdk.internal.net.http.common.Pair;
+import org.javatuples.Pair;
 
 public class Game {
     private String name;
     private String ID;
     private int playerLimit;
-    private Player[] players;
+    private Pair<Player,Player> players;
     private double startTime;
 
     /**
@@ -17,29 +19,32 @@ public class Game {
      */
 
     //Constructor - This method will need additional parameter for filling in players. and player limit
-    public Game(String name, String ID, double startTime) throws IllegalArgumentException {
-        ;
+    public Game(String name, String ID, double startTime,Pair<Player,Player> players) throws IllegalArgumentException {
+        this.name = name;
+        this.ID = ID;
+        this.startTime = startTime;
+        this.players = players;
     }
 
     public static boolean validateArguments(String name, String ID, double startTime) {
-        ;   
+        return true;   
     }
 
     public String getName() {
-        ;
+        return this.name;
     }
 
     public String getID() {
-        ;
+        return this.ID;
     }
 
     public Double getPlayerLimit() {
-        ;
+        return 0.0;//return this.playerLimit;
     }
 
-    //needs an input for which player has won then returns that player and (moves them through the bracket)
+    //needs an input for which team has won then returns that team and (moves them through the bracket)
     //Moving through bracket will most likely occur in the tournament class
-    public Player hasWon() {
-        ;
+    public Player hasWon(Player winner) {
+       return null; //if() ;
     }
 }
