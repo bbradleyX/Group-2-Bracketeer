@@ -1,4 +1,6 @@
-import jdk.internal.net.http.common.Pair;
+package edu.ithaca.dragon.bank;
+
+import org.javatuples.Pair;
 
 public class Player {
     private String name;
@@ -14,22 +16,42 @@ public class Player {
      * @throws IllegalArgumentException for any arguments that violate the above rules
      */
     public Player(String name, String ID, double startTime, double endTime) throws IllegalArgumentException {
-        ;
+        if (validateArguments(name, ID, startTime, endTime)){
+            this.name = name;
+            this.ID = ID;
+            this.schedule = new Pair<>(startTime, endTime);
+        }
+        else {
+            throw new IllegalArgumentException("Cannot add player with invalid credentials.");
+        }
     }
 
     public static boolean validateArguments(String name, String ID, double startTime, double endTime) {
-        ;   
+        if (name.length() < 1) {
+            return false;
+        }
+        for (int i = 0; i < ID.length(); i++) {
+            if ((ID.charAt(i) < 48) || (ID.charAt(i) > 57)) {
+                return false;
+            }
+        }
+        if ((startTime < 0.0) || (startTime > 24.0) || (endTime < 0.0) || (endTime > 24.0)) {
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     public String getName() {
-        ;
+        return name;
     }
 
     public String getID() {
-        ;
+        return ID;
     }
 
     public Pair<Double, Double> getSchedule() {
-        ;
+        return schedule;
     }
 }
