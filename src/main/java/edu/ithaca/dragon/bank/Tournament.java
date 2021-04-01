@@ -8,6 +8,7 @@ public class Tournament {
     //private Team[] teams;
     private Player[] players;
     private double startTime;
+    private double endTime;
 
     /**
      * Constructor for the Player class
@@ -24,7 +25,6 @@ public class Tournament {
         this.ID = ID;
         this.startTime = startTime;
         this.players = players;
-        ;
     }
 
     public static boolean validateArguments(String name, String ID, double startTime) {

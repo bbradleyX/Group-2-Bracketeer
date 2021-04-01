@@ -6,7 +6,8 @@ public class Game {
     private String name;
     private String ID;
     private int playerLimit;
-    private Pair<Player,Player> players;
+    private Player player1;
+    private Player player2;
     private double startTime;
 
     /**
@@ -19,11 +20,13 @@ public class Game {
      */
 
     //Constructor - This method will need additional parameter for filling in players. and player limit
-    public Game(String name, String ID, double startTime,Pair<Player,Player> players) throws IllegalArgumentException {
+    public Game(String name, String ID, double startTime, int playerLimit,Player player1, Player player2) throws IllegalArgumentException {
         this.name = name;
         this.ID = ID;
         this.startTime = startTime;
-        this.players = players;
+        this.player1 = player1;
+        this.player2 = player2;
+        this.playerLimit = playerLimit;
     }
 
     public static boolean validateArguments(String name, String ID, double startTime) {
@@ -38,8 +41,16 @@ public class Game {
         return this.ID;
     }
 
-    public Double getPlayerLimit() {
-        return 0.0;//return this.playerLimit;
+    public int getPlayerLimit() {
+       return this.playerLimit;
+    }
+
+    public Player getPlayer1(){
+        return this.player1;
+    }
+
+    public Player getPlayer2(){
+        return this.player2;
     }
 
     //needs an input for which team has won then returns that team and (moves them through the bracket)
