@@ -1,4 +1,5 @@
-import jdk.internal.net.http.common.Pair;
+package edu.ithaca.dragon.bank;
+
 
 public class Game {
     private String name;
@@ -22,24 +23,24 @@ public class Game {
     }
 
     public static boolean validateArguments(String name, String ID, double startTime) {
-        ;   
+        return false;   
     }
 
     public String getName() {
-        ;
+        return " ";
     }
 
     public String getID() {
-        ;
+        return " ";
     }
 
     public Double getPlayerLimit() {
-        ;
+        return 0.0;
     }
 
     //needs an input for which player has won then returns that player and (moves them through the bracket)
     //Moving through bracket will most likely occur in the tournament class
     public Player hasWon() {
-        ;
+        return null;
     }
 }

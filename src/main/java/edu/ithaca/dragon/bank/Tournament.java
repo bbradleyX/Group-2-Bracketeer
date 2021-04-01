@@ -1,4 +1,6 @@
-import jdk.internal.net.http.common.Pair;
+package edu.ithaca.dragon.bank;
+
+import org.javatuples.Pair;
 
 public class Tournament {
     private String name;
@@ -22,22 +24,23 @@ public class Tournament {
     }
 
     public static boolean validateArguments(String name, String ID, double startTime) {
-        ;   
+        return false;   
     }
 
     public String getName() {
-        ;
+        return " ";
     }
 
     public String getID() {
-        ;
+        return " ";
     }
 
     public Team[] getTeams() {
-        ;
+        return null;
     }
 
-    public Player[] getPlyaers(){
+    public Player[] getPlayers(){
+        return null;
 
     }
 
