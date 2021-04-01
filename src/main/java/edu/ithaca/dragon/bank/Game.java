@@ -1,10 +1,6 @@
 package edu.ithaca.dragon.bank;
-<<<<<<< HEAD
 
-=======
-//import jdk.internal.net.http.common.Pair;
 import org.javatuples.Pair;
->>>>>>> origin/CreateBracket
 
 public class Game {
     private String name;
@@ -31,21 +27,6 @@ public class Game {
     }
 
     public static boolean validateArguments(String name, String ID, double startTime) {
-<<<<<<< HEAD
-        return false;   
-    }
-
-    public String getName() {
-        return " ";
-    }
-
-    public String getID() {
-        return " ";
-    }
-
-    public Double getPlayerLimit() {
-        return 0.0;
-=======
         return true;   
     }
 
@@ -59,17 +40,11 @@ public class Game {
 
     public Double getPlayerLimit() {
         return 0.0;//return this.playerLimit;
->>>>>>> origin/CreateBracket
     }
 
     //needs an input for which team has won then returns that team and (moves them through the bracket)
     //Moving through bracket will most likely occur in the tournament class
-<<<<<<< HEAD
-    public Player hasWon() {
-        return null;
-=======
     public Player hasWon(Player winner) {
        return null; //if() ;
->>>>>>> origin/CreateBracket
     }
 }

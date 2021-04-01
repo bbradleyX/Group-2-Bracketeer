@@ -1,13 +1,8 @@
 package edu.ithaca.dragon.bank;
-<<<<<<< HEAD
 
 import java.util.HashMap;
 
 import org.javatuples.Pair;
-=======
-import java.util.HashMap;
-import java.util.Random;
->>>>>>> origin/CreateBracket
 
 public class Coordinator {
     private String ID;
@@ -23,11 +18,7 @@ public class Coordinator {
      */
 
     public Coordinator(String ID) throws IllegalArgumentException {
-<<<<<<< HEAD
-        ;
-=======
         this.ID = ID;
->>>>>>> origin/CreateBracket
     }
 
     public static boolean validateArguments(String name, String ID, double startTime) {
@@ -35,19 +26,11 @@ public class Coordinator {
     }
 
     public String getID() {
-<<<<<<< HEAD
-        return " ";
-=======
         return ID;
->>>>>>> origin/CreateBracket
     }
 
     //This method creates a tournament and adds it to the list. May need additional parameters for teams participating
     public Void createTournament() {
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/CreateBracket
         return null;
     }
 

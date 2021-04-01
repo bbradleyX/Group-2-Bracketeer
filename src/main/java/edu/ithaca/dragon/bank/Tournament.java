@@ -1,9 +1,5 @@
 package edu.ithaca.dragon.bank;
-<<<<<<< HEAD:src/main/java/edu/ithaca/dragon/bank/Tournament.java
-
-=======
 //import jdk.internal.net.http.common.Pair;
->>>>>>> origin/CreateBracket:src/main/java/edu/ithaca/dragon/bank/Touranment.java
 import org.javatuples.Pair;
 
 public class Tournament {
@@ -36,21 +32,6 @@ public class Tournament {
     }
 
     public String getName() {
-<<<<<<< HEAD:src/main/java/edu/ithaca/dragon/bank/Tournament.java
-        return " ";
-    }
-
-    public String getID() {
-        return " ";
-    }
-
-    public Team[] getTeams() {
-        return null;
-    }
-
-    public Player[] getPlayers(){
-        return null;
-=======
         return this.name;
     }
 
@@ -61,7 +42,6 @@ public class Tournament {
     /* public Team[] getTeams() {
         return this.teams;
     } */
->>>>>>> origin/CreateBracket:src/main/java/edu/ithaca/dragon/bank/Touranment.java
 
     public Player[] getPlayers(){
         return this.players;
