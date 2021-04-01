@@ -1,11 +1,15 @@
 package edu.ithaca.dragon.bank;
+<<<<<<< HEAD:src/main/java/edu/ithaca/dragon/bank/Tournament.java
 
+=======
+//import jdk.internal.net.http.common.Pair;
+>>>>>>> origin/CreateBracket:src/main/java/edu/ithaca/dragon/bank/Touranment.java
 import org.javatuples.Pair;
 
 public class Tournament {
     private String name;
     private String ID;
-    private Team[] teams;
+    //private Team[] teams;
     private Player[] players;
     private double startTime;
 
@@ -18,8 +22,12 @@ public class Tournament {
      * @throws IllegalArgumentException for any arguments that violate the above rules
      */
 
-    //Constructor - This function will most likely need additional params and functionality for adding in teams and players.
-    public Tournament(String name, String ID, double startTime) throws IllegalArgumentException {
+    //Constructor - Incomplete as of now using players to fill in for teams until we have that functionality
+    public Tournament(String name, String ID, double startTime,Player[] players) throws IllegalArgumentException {
+        this.name = name;
+        this.ID = ID;
+        this.startTime = startTime;
+        this.players = players;
         ;
     }
 
@@ -28,6 +36,7 @@ public class Tournament {
     }
 
     public String getName() {
+<<<<<<< HEAD:src/main/java/edu/ithaca/dragon/bank/Tournament.java
         return " ";
     }
 
@@ -41,7 +50,21 @@ public class Tournament {
 
     public Player[] getPlayers(){
         return null;
+=======
+        return this.name;
+    }
 
+    public String getID() {
+        return this.ID;
+    }
+
+    /* public Team[] getTeams() {
+        return this.teams;
+    } */
+>>>>>>> origin/CreateBracket:src/main/java/edu/ithaca/dragon/bank/Touranment.java
+
+    public Player[] getPlayers(){
+        return this.players;
     }
 
     //This will need more methods but non are on the diagram as of right now.
