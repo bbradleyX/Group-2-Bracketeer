@@ -2,6 +2,8 @@ package edu.ithaca.dragon.bank;
 import java.util.HashMap;
 import java.util.Random;
 
+import org.javatuples.Pair;
+
 public class Coordinator {
     private String ID;
     private Tournament[] tournaments;
@@ -49,7 +51,7 @@ public class Coordinator {
     }
 
       //This methods sees if any players have a time conflict
-      public boolean isTimeconflict() {
+      public boolean isTimeconflict(Pair<Double, Double> playerTime, double tournTime) {
         return false;
     }
 }
