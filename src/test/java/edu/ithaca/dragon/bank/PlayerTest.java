@@ -48,4 +48,13 @@ class PlayerTest {
         assertEquals(17.5, myPlayer.getSchedule().getValue1().doubleValue());
     }
 
+    @Test 
+    void modifySchedulesTest(){
+        
+    }
+
+    @Test 
+    void viewSchedulesTest(){
+        
+    }
 }

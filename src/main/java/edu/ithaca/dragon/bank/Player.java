@@ -57,4 +57,19 @@ public class Player {
     public Pair<Double, Double> getSchedule() {
         return schedule;
     }
+    
+    /**
+     * Changes the current player Time  
+     * @throws IllegalArgumentException if currentTime is the same a newTime
+     */
+    public void modifySchedules(double currentTime, double newTime){
+        
+    }
+
+     /**
+     * search the player list to find the player to view schedule  
+     */
+    public void viewSchedules(Player player){
+        
+    }
 }
