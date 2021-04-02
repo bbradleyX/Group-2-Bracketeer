@@ -23,3 +23,6 @@ Diagrams:https://app.diagrams.net/#G1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL
 Project Folder (Google Drive): https://drive.google.com/drive/folders/1OIzB6NRB93VdPahTLLmjbHnbeGQwexo-?usp=sharing
 
 Sprint 1 Goal : make sure players are in events and see their schedules in order to fix time conflicts
+
+
+Sprint 1 Review Agenda: https://docs.google.com/document/d/1sj3gLg92gp8cnVNYUHRa71PNVxhM05fpXTXNadTWnts/edit?usp=sharing
