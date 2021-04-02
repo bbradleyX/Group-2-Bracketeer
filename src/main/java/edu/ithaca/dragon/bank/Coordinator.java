@@ -46,11 +46,16 @@ public class Coordinator {
 
        //this method creates a bracket for a tournament
        public void createBracket(Tournament tournament) {
-           
+
     }
 
       //This methods sees if any players have a time conflict
       public boolean isTimeconflict(Pair<Double, Double> playerTime, double tournTime) {
-        return false;
+        if(tournTime >= playerTime.getValue0() && tournTime <= playerTime.getValue1()){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
