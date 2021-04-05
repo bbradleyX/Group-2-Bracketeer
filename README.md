@@ -24,5 +24,6 @@ Project Folder (Google Drive): https://drive.google.com/drive/folders/1OIzB6NRB9
 
 Sprint 1 Goal : make sure players are in events and see their schedules in order to fix time conflicts
 
-
 Sprint 1 Review Agenda: https://docs.google.com/document/d/1sj3gLg92gp8cnVNYUHRa71PNVxhM05fpXTXNadTWnts/edit?usp=sharing
+
+Sprint 1 Retrospective Meeting: https://docs.google.com/document/d/18htpRhOfFF6OTmPySXXQruU-MFbZdhic-eOE1xQrVX8/edit?usp=sharing
