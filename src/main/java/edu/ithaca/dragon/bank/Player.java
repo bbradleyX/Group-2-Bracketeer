@@ -6,7 +6,7 @@ public class Player {
     private String name;
     private String ID;
     private Pair<Double, Double> schedule;
-
+   
     /**
      * Constructor for the Player class
      * @param name must be a name consisting of at least 1 character, number, or symbol
@@ -60,11 +60,18 @@ public class Player {
     
     /**
      * Changes the current player Time  
-     * @throws IllegalArgumentException if currentTime is the same a newTime
+     * @throws IllegalArgumentException no schedule
      */
-    public void modifySchedules(double startTime, double endTime){
-        
+    public void modifySchedule(double startTime, double endTime){ 
+        try {
+            this.schedule = new Pair<>(startTime, endTime);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("player has no schedule");
+        }
     }
+
+
+    
 
    
 }
