@@ -27,3 +27,5 @@ Sprint 1 Goal : make sure players are in events and see their schedules in order
 Sprint 1 Review Agenda: https://docs.google.com/document/d/1sj3gLg92gp8cnVNYUHRa71PNVxhM05fpXTXNadTWnts/edit?usp=sharing
 
 Sprint 1 Retrospective Meeting: https://docs.google.com/document/d/1CDgpqwyd9kbkrlJu7MZHu5oLT1lqJUnSy3PSdJwEkgg/edit?usp=sharing
+
+Sprint 2 Goal: Main UI (Coordinator) is able to view team schedules and changes made to those same schedules
