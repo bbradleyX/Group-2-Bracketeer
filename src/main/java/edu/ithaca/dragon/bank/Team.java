@@ -30,6 +30,9 @@ public class Team {
         return teamSchedule;
     }
 
+    public void viewSchedule(Player player){
+
+    }
 
 
 }
