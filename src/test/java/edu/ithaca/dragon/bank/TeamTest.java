@@ -17,11 +17,20 @@ public class TeamTest {
         //Unit Test for team names
         assertEquals("Team 1", team1.getTeamName());
         assertEquals("Team2", team2.getTeamName());
-        assertEquals("Index: 1, Size: 0", thrown.getMessage());
-        assertTrue(team4.getTeamName().contains("Invalid Team Name"));
+        assertEquals("Invalid Team Name", team3.getTeamName());
+        assertEquals("Invalid Team Name", team4.getTeamName());
+        
+        //Unit Test for team player list
+        assertEquals([], team1.getTeam());
+        assertEquals("Team2", team2.getTeam());
+        assertEquals("Invalid Team Name", team3.getTeamName());
+        assertEquals("Invalid Team Name", team4.getTeamName());
 
         //Unit Test for team player schedule
-
+        assertEquals("Team 1", team1.getTeamName());
+        assertEquals("Team2", team2.getTeamName());
+        assertEquals("Invalid Team Name", team3.getTeamName());
+        assertEquals("Invalid Team Name", team4.getTeamName());
     }
 
     void addAndRemoveTeamsTest(){}
