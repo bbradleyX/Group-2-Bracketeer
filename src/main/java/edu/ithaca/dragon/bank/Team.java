@@ -17,7 +17,7 @@ public class Team {
         this.teamSchedule = new ArrayList<Pair<Double, Double>>();
 
     }
-    private void addPlayer(Player player){
+    public void addPlayer(Player player){
         if (teamPlayers.isEmpty()){
             teamPlayers.add(player);
         }
@@ -27,7 +27,7 @@ public class Team {
         }
     }
 
-    private void removePlayer(Player player) throws IndexOutOfBoundsException{
+    public void removePlayer(Player player) throws IndexOutOfBoundsException{
         if (teamPlayers.isEmpty()){
             throw new IndexOutOfBoundsException("This team list is empty. There are no players in this team.");
         }
@@ -40,8 +40,8 @@ public class Team {
         return teamName;
     }
 
-    public ArrayList <Player> getTeam(){
-        return teamPlayers;
+    public String getTeam(){
+        return teamPlayers.toString();
     }
 
     public ArrayList <Pair<Double, Double>> getTeamSchedule(){
