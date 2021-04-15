@@ -1,5 +1,6 @@
 package edu.ithaca.dragon.bank;
-
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 class TournamentTest {
@@ -27,8 +28,9 @@ class TournamentTest {
     
         @Test
         void getNameTest() {
-            Player myPlayer = new Player("Adam", "1234", 9.0, 5.5);
-            assertEquals(myPlayer.getName(), "Adam");
+            List<Player> players = new ArrayList<>();
+            players.add(new Player("A", "1234", 9.0, 5.5));
+
         }
     
         @Test
@@ -43,6 +45,22 @@ class TournamentTest {
             //assertEquals(myPlayer.getSchedule().getKey(), 9.0);
             //assertEquals(myPlayer.getSchedule().getValue(), 17.5);
         }
+
+        @Test
+        void isRoundCompleteTest () {
+            Player myPlayer = new Player("Adam", "1234", 9.0, 17.5);
+            //assertEquals(myPlayer.getSchedule().getKey(), 9.0);
+            //assertEquals(myPlayer.getSchedule().getValue(), 17.5);
+        }
+
+        @Test
+        void checkTournyFin() {
+            Player myPlayer = new Player("Adam", "1234", 9.0, 17.5);
+            //assertEquals(myPlayer.getSchedule().getKey(), 9.0);
+            //assertEquals(myPlayer.getSchedule().getValue(), 17.5);
+        }
     
+
+
     }
     //@Test

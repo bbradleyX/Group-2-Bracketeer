@@ -7,6 +7,8 @@ public class Tournament {
     private String ID;
     //private Team[] teams;
     private Player[] players;
+    private Player[] inGame;
+    private Player[] elim;
     private double startTime;
 
     /**
@@ -47,5 +49,24 @@ public class Tournament {
         return this.players;
     }
 
+    public boolean isRoundComplete(){
+        return false;
+    }
+
+    public boolean checkTournyFin(){
+        return false;
+    }
+
+    public void createRound(){
+       ;
+    }
+
+    public Player[] getInGame(){
+        return this.inGame;
+    }
+
+    public Player[] getElim(){
+        return this.elim;
+    }
     //This will need more methods but non are on the diagram as of right now.
 }
