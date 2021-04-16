@@ -59,12 +59,12 @@ public class TeamTest {
         assertEquals("Cannot add player with invalid credentials.", exception.getMessage());
         
         //Remove From Team Tests
-        Throwable exception = assertThrows(IndexOutOfBoundsException.class, () -> {team1.removePlayer("0000");});
+        exception = assertThrows(IndexOutOfBoundsException.class, () -> {team1.removePlayer("0000");});
         assertEquals("This team list is empty. There are no players in this team.", exception.getMessage());
 
     }
 
     @Test
-    void getTeamScheduleTest(){}
+    void getInfoFromTeamsTest(){}
 
 }
