@@ -31,4 +31,8 @@ public class CoordinatorTest {
         assertEquals(false, newCoord.isTimeconflict(a.getSchedule(), 13.0));
         
     }
+
+    void roundRobin(){
+        
+    }
 }
