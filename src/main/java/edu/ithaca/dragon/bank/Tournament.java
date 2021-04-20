@@ -69,4 +69,9 @@ public class Tournament {
         return this.elim;
     }
     //This will need more methods but non are on the diagram as of right now.
+
+     //This create a function that takes all of the teams and creates a game for every pair of teams
+     public static void roundRobin() {
+        
+    }
 }

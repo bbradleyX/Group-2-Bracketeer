@@ -4,8 +4,6 @@ import java.util.HashMap;
 
 import org.javatuples.Pair;
 
-import edu.ithaca.dragon.bank.Game;
-import edu.ithaca.dragon.bank.Team;
 
 public class Coordinator {
     private String ID;
@@ -57,8 +55,4 @@ public class Coordinator {
         return false;
     }
 
-    //This create a function that takes all of the teams and creates a game for every pair of teams
-    public static void roundRobin() {
-        
-    }
 }
