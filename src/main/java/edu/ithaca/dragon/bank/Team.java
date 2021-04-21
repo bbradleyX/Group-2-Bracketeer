@@ -17,7 +17,7 @@ public class Team {
     private LinkedHashMap<Player, Pair<Double, Double>> teamsMap;
 
     public Team(String teamName)throws InvalidParameterException{
-        if (teamName == "" || teamName == " "){
+        if (!(isValidName(teamName))){
             throw new InvalidParameterException("Invalid Team Name");
         }
         else{
@@ -25,6 +25,15 @@ public class Team {
             this.teamsMap = new LinkedHashMap<Player, Pair<Double, Double>>();
         }
 
+    }
+
+    public static boolean isValidName(String teamName){ //A bug here, where it doesn't properly define an actual team name
+        if (teamName == "" || teamName == " "){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     public void addPlayer(Player player)throws InvalidParameterException{

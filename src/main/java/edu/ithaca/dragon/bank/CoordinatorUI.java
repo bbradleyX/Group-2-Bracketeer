@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class CoordinatorUI {
 
-    public static void runUI(){
-        Scanner myScan = new Scanner(System.in);
+    public static void runUI(Scanner myScan){
+        //Scanner myScan = new Scanner(System.in);
 
         //Check to ensure Coordinator wants to run a tournament
         Boolean runTournament = true;
@@ -124,6 +124,8 @@ public class CoordinatorUI {
         }
     }
     public static void main(String[] args) {
-        runUI();
+        Scanner scanner = new Scanner(System.in);
+        runUI(scanner);
+        scanner.close();
     }
 }

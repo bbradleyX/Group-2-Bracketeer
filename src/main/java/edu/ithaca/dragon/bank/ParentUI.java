@@ -21,11 +21,19 @@ public class ParentUI {
             }
 
             else if(userOption == 2){
+                System.out.println("Enter a team name: ");
+                String userTeamName = option.nextLine();
+                while(!(Team.isValidName(userTeamName))){
+                    System.out.println("You entered in an invalid name!");
+                    System.out.println("Try again: ");
+                    userTeamName = option.nextLine();
+                }
+                Team newTeam = new Team(userTeamName);
                 
             }
 
             else if(userOption == 3){
-                CoordinatorUI.runUI();
+                CoordinatorUI.runUI(option);
             }
 
             System.out.println("Select an option or hit zero: ");
@@ -35,5 +43,7 @@ public class ParentUI {
             userOption = option.nextInt();
             // System.out.println(System.in.available());
         }
+
+        option.close();
      }
     }
