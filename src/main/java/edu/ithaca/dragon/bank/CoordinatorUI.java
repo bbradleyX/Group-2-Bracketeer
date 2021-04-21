@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CoordinatorUI {
-    public static void main(String[] args) {
+
+    public static void runUI(){
         Scanner myScan = new Scanner(System.in);
 
         //Check to ensure Coordinator wants to run a tournament
@@ -121,5 +122,8 @@ public class CoordinatorUI {
                 }
             }
         }
+    }
+    public static void main(String[] args) {
+        runUI();
     }
 }

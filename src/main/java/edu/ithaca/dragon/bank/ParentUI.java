@@ -21,11 +21,11 @@ public class ParentUI {
             }
 
             else if(userOption == 2){
-
+                
             }
 
             else if(userOption == 3){
-                
+                CoordinatorUI.runUI();
             }
 
             System.out.println("Select an option or hit zero: ");

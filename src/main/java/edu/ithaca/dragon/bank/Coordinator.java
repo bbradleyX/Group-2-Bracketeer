@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 import org.javatuples.Pair;
 
-import org.javatuples.Pair;
 
 public class Coordinator {
     private String ID;
