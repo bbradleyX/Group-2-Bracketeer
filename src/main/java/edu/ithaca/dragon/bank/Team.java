@@ -84,10 +84,6 @@ public class Team {
         return teamName;
     }
 
-<<<<<<< HEAD
-    public void viewSchedule(Player player){
-
-=======
     public String getTeamInfo()throws Error{
         if (teamsMap.isEmpty()){
             throw new Error("Team is Empty");
@@ -100,7 +96,6 @@ public class Team {
             }
             return info;
         }
->>>>>>> Team
     }
 
     public String getTeamSchedule()throws IndexOutOfBoundsException{
