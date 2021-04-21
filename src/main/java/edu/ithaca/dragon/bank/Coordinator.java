@@ -23,10 +23,6 @@ public class Coordinator {
         this.ID = ID;
     }
 
-    public static boolean validateArguments(String name, String ID, double startTime) {
-        return false;   
-    }
-
     public String getID() {
         return ID;
     }
@@ -42,17 +38,12 @@ public class Coordinator {
     }
 
       //This method makes a team? might need an additional parameter for teamlist or some connection to team in diagram
-      public Void createTeam() {
-        return null;
-    }
-
-       //this method creates a bracket for a tournament
-       public Void createBracket(Tournament tournament) {
+    public Void createTeam() {
         return null;
     }
 
       //This methods sees if any players have a time conflict
-      public boolean isTimeconflict(Pair<Double, Double> playerTime, double tournTime) {
+    public boolean isTimeconflict(Pair<Double, Double> playerTime, double tournTime) {
         return false;
     }
 }
