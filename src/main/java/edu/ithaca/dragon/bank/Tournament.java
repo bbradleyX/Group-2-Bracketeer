@@ -16,6 +16,7 @@ public class Tournament {
     private List<Player> players;
     private List<Player> inGame;
     private List<Player> elim;
+
     private double startTime;
     private int group;
     private List<Game> games;
@@ -43,7 +44,27 @@ public class Tournament {
     }
 
     public static boolean validateArguments(String name, String ID, double startTime) {
-        return false;   
+        if (name.length() < 1) {
+            System.out.println("Name must consist of at least 1 character.");
+            return false;
+        }
+        if (ID.length() != 4) {
+            System.out.println("ID must be a string of 4 numbers.");
+            return false;
+        }
+        for (int i = 0; i < ID.length(); i++) {
+            if ((ID.charAt(i) < 48) || (ID.charAt(i) > 57)) {
+                System.out.println("ID must be a string of 4 numbers.");
+                return false;
+            }
+        }
+        if ((startTime < 0.0) || (startTime > 24.0)) {
+            System.out.println("Start time must be a value between 0.0 and 24.0.");
+            return false;
+        }
+        else{
+            return true;
+        }   
     }
 
     public String getName() {
