@@ -42,7 +42,7 @@ public class PlayerUI {
         return true;
     }
 
-    public static void runUI(){
+    public static void runUI(Scanner scanner){
         System.out.println("You are now creating player\n");
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         
@@ -120,8 +120,11 @@ public class PlayerUI {
         } 
         myObj.close();
     }
-    public static void main(String args[]){
-        runUI();
+    public static void main(String args[], Scanner scanner){
+        runUI(scanner);
+    }
+
+    public static void runUI(int nextInt) {
     }
 }
 
