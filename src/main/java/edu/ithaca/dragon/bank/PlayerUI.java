@@ -42,10 +42,7 @@ public class PlayerUI {
         return true;
     }
 
-}
-
-class Main {
-    public static void main(String[] args) {
+    public static void runUI(){
         System.out.println("You are now creating player\n");
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         
@@ -81,6 +78,8 @@ class Main {
             }
             double newEndTime = endTime;
             
+            System.out.println("\n");
+            System.out.println("----------");
             System.out.println(newName + ", you are now a player.\n" + "Your ID is " + newID + "\nYou will start at " +newStartTime + "\n" + "You will end at " + endTime + "\n");
             Player player1 = new Player(newName, newID, newStartTime, newEndTime);
         
@@ -120,8 +119,11 @@ class Main {
                 }
         } 
         myObj.close();
-    
+    }
+    public static void main(String args[]){
+        runUI();
     }
 }
+
 
     
