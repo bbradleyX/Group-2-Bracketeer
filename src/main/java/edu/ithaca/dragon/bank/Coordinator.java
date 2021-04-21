@@ -13,6 +13,7 @@ public class Coordinator {
     //I am unsure how to initialize a hashmap. This line may need to be looked at
     private HashMap schedule;
 
+    //working 
     /**
      * Constructor for the Coordinator class
      * @param ID must be a string of 4 numbers
