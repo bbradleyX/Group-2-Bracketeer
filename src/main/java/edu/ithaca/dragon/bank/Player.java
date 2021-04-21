@@ -28,17 +28,21 @@ public class Player {
 
     public static boolean validateArguments(String name, String ID, double startTime, double endTime) {
         if (name.length() < 1) {
+            System.out.println("Name must consist of at least 1 character.");
             return false;
         }
         if (ID.length() != 4) {
+            System.out.println("ID must be a string of 4 numbers.");
             return false;
         }
         for (int i = 0; i < ID.length(); i++) {
             if ((ID.charAt(i) < 48) || (ID.charAt(i) > 57)) {
+                System.out.println("ID must be a string of 4 numbers.");
                 return false;
             }
         }
         if ((startTime < 0.0) || (startTime > 24.0) || (endTime < 0.0) || (endTime > 24.0)) {
+            System.out.println("Start/End time must each be a value between 0.0 and 24.0.");
             return false;
         }
         else{
