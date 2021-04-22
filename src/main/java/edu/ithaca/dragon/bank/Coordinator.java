@@ -1,5 +1,6 @@
 package edu.ithaca.dragon.bank;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.javatuples.Pair;
@@ -8,7 +9,7 @@ import org.javatuples.Pair;
 
 public class Coordinator {
     private String ID;
-    private Tournament[] tournaments;
+    private ArrayList<Tournament> tournaments;
     private boolean timeConflict;
     //I am unsure how to initialize a hashmap. This line may need to be looked at
     private HashMap schedule;
@@ -24,36 +25,41 @@ public class Coordinator {
         this.ID = ID;
     }
 
-    public static boolean validateArguments(String name, String ID, double startTime) {
-        return false;   
-    }
-
     public String getID() {
         return ID;
     }
 
     //This method creates a tournament and adds it to the list. May need additional parameters for teams participating
-    public Void createTournament() {
-        return null;
+    public void createTournament(String name, String ID, double startTime, ArrayList<Player> players) {
+        if (Tournament.validateArguments(name, ID, startTime)){
+            tournaments.add(new Tournament(name, ID, startTime, players));
+        }
+        else{
+            System.out.println("Failed to create tournament.");
+        }
     }
 
      //This method removes a tournament and adds it to the list. Needs parameter for selecting which tournament to remove
-    public Void removeTournament() {
-        return null;
+    public void removeTournament(String name) {
+        for (int i = 0; i < tournaments.size(); i++){
+            if (name.equalsIgnoreCase(tournaments.get(i).getName())){
+                tournaments.remove(i);
+            }
+        }
     }
 
       //This method makes a team? might need an additional parameter for teamlist or some connection to team in diagram
-      public Void createTeam() {
+    public Void createTeam() {
         return null;
     }
 
        //this method creates a bracket for a tournament
-       public Void createBracket(Tournament tournament) {
+    public Void createBracket(Tournament tournament) {
         return null;
     }
 
       //This methods sees if any players have a time conflict
-      public boolean isTimeconflict(Pair<Double, Double> playerTime, double tournTime) {
-        return false;
+    public boolean isTimeconflict(Pair<Double, Double> playerTime, double tournTime) {
+        
     }
 }
