@@ -18,17 +18,12 @@ public class ParentUI {
         while(userOption >= 1 && userOption <= 3){
             if( userOption == 1){
                 PlayerUI.runUI(option);
+
             }
 
             else if(userOption == 2){
-                System.out.println("Enter a team name: ");
-                String userTeamName = option.nextLine();
-                while(!(Team.isValidName(userTeamName))){
-                    System.out.println("You entered in an invalid name!");
-                    System.out.println("Try again: ");
-                    userTeamName = option.nextLine();
-                }
-                Team newTeam = new Team(userTeamName);
+                System.out.println("\n");
+                System.out.println("Sorry this option is under construction!");
                 
             }
 
