@@ -44,6 +44,7 @@ public class Coordinator {
         for (int i = 0; i < tournaments.size(); i++){
             if (name.equalsIgnoreCase(tournaments.get(i).getName())){
                 tournaments.remove(i);
+                System.out.println("Tournament removed successfully!");
             }
         }
     }
@@ -60,6 +61,6 @@ public class Coordinator {
 
       //This methods sees if any players have a time conflict
     public boolean isTimeconflict(Pair<Double, Double> playerTime, double tournTime) {
-        
+        return false;
     }
 }
