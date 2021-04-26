@@ -30,7 +30,7 @@ Sprint 1 Review Agenda: https://docs.google.com/document/d/1sj3gLg92gp8cnVNYUHRa
 Sprint 1 Retrospective Meeting: https://docs.google.com/document/d/1CDgpqwyd9kbkrlJu7MZHu5oLT1lqJUnSy3PSdJwEkgg/edit?usp=sharing
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
-## Sprint 3
+## Sprint 2
 Sprint 2 Goal: Main UI (Coordinator) is able to view team schedules and changes made to those same schedules
 
 Sprint 2 Review Agenda: https://docs.google.com/document/d/1Pod2ui3jl6tfOx-eX1YYFs1JXvHg0OyCDCqlxYXtoD0/edit?usp=sharing
