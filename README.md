@@ -1,4 +1,4 @@
-# Group-2-Bracketeer
+### Group-2-Bracketeer
 COMP 345 - Group 2 Dev
 Adam: Yes!
 Amber:Yes Yes
@@ -22,6 +22,7 @@ Diagrams:https://app.diagrams.net/#G1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL
 
 Project Folder (Google Drive): https://drive.google.com/drive/folders/1OIzB6NRB93VdPahTLLmjbHnbeGQwexo-?usp=sharing
 
+## Sprint 1
 Sprint 1 Goal : make sure players are in events and see their schedules in order to fix time conflicts
 
 Sprint 1 Review Agenda: https://docs.google.com/document/d/1sj3gLg92gp8cnVNYUHRa71PNVxhM05fpXTXNadTWnts/edit?usp=sharing
@@ -29,7 +30,7 @@ Sprint 1 Review Agenda: https://docs.google.com/document/d/1sj3gLg92gp8cnVNYUHRa
 Sprint 1 Retrospective Meeting: https://docs.google.com/document/d/1CDgpqwyd9kbkrlJu7MZHu5oLT1lqJUnSy3PSdJwEkgg/edit?usp=sharing
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
-
+## Sprint 3
 Sprint 2 Goal: Main UI (Coordinator) is able to view team schedules and changes made to those same schedules
 
 Sprint 2 Review Agenda: https://docs.google.com/document/d/1Pod2ui3jl6tfOx-eX1YYFs1JXvHg0OyCDCqlxYXtoD0/edit?usp=sharing
@@ -39,3 +40,11 @@ Sprint 2 Retrospective Meeting: https://docs.google.com/document/d/19LFHm4bHxUli
 Sprint 2 Diagrams: https://app.diagrams.net/#G1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
+## Sprint 3
+Sprint 3 Goal:
+
+Sprint 3 Review Agenda: 
+
+Sprint 3 Retrospective Meeting: 
+
+Sprint 3 Diagrams: https://app.diagrams.net/#G1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL
