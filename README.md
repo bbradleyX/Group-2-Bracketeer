@@ -41,7 +41,7 @@ Sprint 2 Diagrams: https://app.diagrams.net/#G1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Sprint 3
-Sprint 3 Goal:
+Sprint 3 Goal: User Interfaces complete and tested as well as have full capability of running tournaments
 
 Sprint 3 Review Agenda: 
 
