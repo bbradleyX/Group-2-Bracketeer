@@ -27,7 +27,7 @@ Sprint 1 Review Agenda: https://docs.google.com/document/d/1sj3gLg92gp8cnVNYUHRa
 
 Sprint 1 Retrospective Meeting: https://docs.google.com/document/d/1CDgpqwyd9kbkrlJu7MZHu5oLT1lqJUnSy3PSdJwEkgg/edit?usp=sharing
 
-Sprint 1 Diagrams: Diagrams:https://app.diagrams.net/#G1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL
+Sprint 1 Diagrams: https://app.diagrams.net/#G1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Sprint 2
