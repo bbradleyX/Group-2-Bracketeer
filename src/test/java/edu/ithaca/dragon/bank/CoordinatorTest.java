@@ -22,6 +22,20 @@ public class CoordinatorTest {
     */}
 
     @Test
+    void createTeamTest(){
+        Coordinator newCoord = new Coordinator("0000");
+    }
+
+    @Test
+    void removeTeamTest(){
+        //Create Coordinator object
+        Coordinator newCoord = new Coordinator("2345");
+
+        //Create a Tournament
+        newCoord.createTournament("Hockey", "1234", 0.0, teams);
+    }
+
+    @Test
     void isTimeConflict(){
         Player a = new Player("a", "1234", 2.0, 3.0);
         Coordinator newCoord = new Coordinator("2345");
