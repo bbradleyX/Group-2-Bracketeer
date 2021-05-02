@@ -8,7 +8,7 @@ public class Tournament {
     private String name;
     private String ID;
     //private Team[] teams;
-    private ArrayList<Player> players;
+    private ArrayList<Team> players;
     private double startTime;
 
     /**
@@ -20,8 +20,8 @@ public class Tournament {
      * @throws IllegalArgumentException for any arguments that violate the above rules
      */
 
-    //Constructor - Incomplete as of now using players to fill in for teams until we have that functionality
-    public Tournament(String name, String ID, double startTime, ArrayList<Player> players) throws IllegalArgumentException {
+    //Constructor
+    public Tournament(String name, String ID, double startTime, ArrayList<Team> players) throws IllegalArgumentException {
         this.name = name;
         this.ID = ID;
         this.startTime = startTime;
@@ -65,7 +65,7 @@ public class Tournament {
         return this.teams;
     } */
 
-    public ArrayList<Player> getPlayers(){
+    public ArrayList<Team> getPlayers(){
         return this.players;
     }
 
