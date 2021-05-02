@@ -5,8 +5,6 @@ import java.util.HashMap;
 
 import org.javatuples.Pair;
 
-import org.javatuples.Pair;
-
 public class Coordinator {
     private String ID;
     private ArrayList<Tournament> tournaments;
@@ -23,6 +21,7 @@ public class Coordinator {
 
     public Coordinator(String ID) throws IllegalArgumentException {
         this.ID = ID;
+        tournaments = new ArrayList<>();
     }
 
     public String getID() {
@@ -30,7 +29,7 @@ public class Coordinator {
     }
 
     //This method creates a tournament and adds it to the list. May need additional parameters for teams participating
-    public void createTournament(String name, String ID, double startTime, ArrayList<Player> players) {
+    public void createTournament(String name, String ID, double startTime, ArrayList<Team> players) {
         if (Tournament.validateArguments(name, ID, startTime)){
             tournaments.add(new Tournament(name, ID, startTime, players));
         }
@@ -49,9 +48,21 @@ public class Coordinator {
         }
     }
 
-      //This method makes a team? might need an additional parameter for teamlist or some connection to team in diagram
-    public Void createTeam() {
-        return null;
+    /**
+     * Creates a team and adds them to a tournament
+     * @param 
+     */
+    public void createTeam() {
+        ;
+    }
+
+    /**
+     * Removes a team from a tournament
+     * @param tournamentName name of the tournament that contains the desired team to be removed
+     * @param teamName name of the team to be removed
+     */
+    public void removeTeam(String tournamentName, String teamName){
+        ;
     }
 
        //this method creates a bracket for a tournament
