@@ -14,19 +14,26 @@ import org.javatuples.Pair;
 
 public class Team {
     private String teamName;
-    //private Pair<Double, Double> playTime;
     private LinkedHashMap<Player, Pair<Double, Double>> teamsMap;
 
     public Team(String teamName)throws InvalidParameterException{
-        if (teamName == "" || teamName == " "){
+        if (!(isValidName(teamName))){
             throw new InvalidParameterException("Invalid Team Name");
         }
         else{
             this.teamName = teamName;
             this.teamsMap = new LinkedHashMap<Player, Pair<Double, Double>>();
-            //this.playTime = null;
         }
 
+    }
+
+    public static boolean isValidName(String teamName){ //A bug here, where it doesn't properly define an actual team name //Answer: a team name is up to the discretion of the players
+        if (teamName == "" || teamName == " "){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     public void addPlayer(Player player)throws InvalidParameterException{

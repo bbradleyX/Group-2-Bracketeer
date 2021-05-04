@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 import org.javatuples.Pair;
 
-import org.javatuples.Pair;
 
 public class Coordinator {
     private String ID;
@@ -33,17 +32,30 @@ public class Coordinator {
     }
 
      //This method removes a tournament and adds it to the list. Needs parameter for selecting which tournament to remove
-    public Void removeTournament() {
-        return null;
+    public void removeTournament() {
+
     }
 
       //This method makes a team? might need an additional parameter for teamlist or some connection to team in diagram
-    public Void createTeam() {
-        return null;
+      public void createTeam() {
+
+    }
+
+       //this method creates a bracket for a tournament
+       public void createBracket(Tournament tournament) {
+
     }
 
       //This methods sees if any players have a time conflict
-    public boolean isTimeconflict(Pair<Double, Double> playerTime, double tournTime) {
-        return false;
+      public boolean isTimeconflict(Pair<Double, Double> playerTime, double tournTime) {
+          if(tournTime < 0){
+              return false;
+            }
+          if(tournTime >= playerTime.getValue0() && tournTime <= playerTime.getValue1()){
+              return true;
+            }
+        else{
+            return false;
+        }
     }
 }
