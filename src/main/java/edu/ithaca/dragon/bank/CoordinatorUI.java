@@ -4,6 +4,22 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CoordinatorUI {
+     /* */
+     private String teamName;
+    //private Pair<Double, Double> playTime;
+    //private PlayrUI;
+
+    /* public CoordinatorUI(String teamName)throws InvalidParameterException{
+        if (teamName == "" || teamName == " "){
+            throw new InvalidParameterException("Invalid Team Name");
+        }
+        else{
+            this.teamName = teamName;
+            this.teamsMap = new LinkedHashMap<Player, Pair<Double, Double>>();
+            //this.playTime = null;
+        }
+
+    } */
     public static void main(String[] args) {
         Scanner myScan = new Scanner(System.in);
 
@@ -66,7 +82,7 @@ public class CoordinatorUI {
                         }
                     }
                     System.out.println("All players added successfully!");
-
+                    /* */
                     //Create tournament
                     System.out.println("Enter a name for the tournament.");
                     String nameIn = myScan.next();
