@@ -12,11 +12,9 @@ import org.javatuples.Pair;
 public class Tournament {
     private String name;
     private String ID;
-    //private Team[] teams;
-    private List<Player> players;
-    private List<Player> inGame;
-    private List<Player> elim;
-
+    private List<Team> teams;
+    private List<Team> inGame;
+    private List<Team> elim;
     private double startTime;
     private int group;
     private List<Game> games;
@@ -30,12 +28,11 @@ public class Tournament {
      * @throws IllegalArgumentException for any arguments that violate the above rules
      */
 
-    //Constructor - Incomplete as of now using players to fill in for teams until we have that functionality
-    public Tournament(String name, String ID, double startTime,List<Player> players2) throws IllegalArgumentException {
+    public Tournament(String name, String ID, double startTime, List<Team> teams) throws IllegalArgumentException {
         this.name = name;
         this.ID = ID;
         this.startTime = startTime;
-        this.players = players2;
+        this.teams = teams;
         this.group = 0;
         this.games = new ArrayList<>();
         this.inGame = new ArrayList<>();
@@ -75,12 +72,8 @@ public class Tournament {
         return this.ID;
     }
 
-    /* public Team[] getTeams() {
+    public List<Team> getTeams() {
         return this.teams;
-    } */
-
-    public List<Player> getPlayers(){
-        return this.players;
     }
     
     public List<Game> getGames(){
@@ -100,7 +93,7 @@ public class Tournament {
         List<Game> copy = new ArrayList<>();
         for(int i=0;i<size;i++){
             if(games.get(i).getWinner()!=null){
-                players.add(games.get(i).getWinner());
+                teams.add(games.get(i).getWinner());
                 elim.add(games.get(i).getLoser());
             }
             else{
@@ -111,7 +104,7 @@ public class Tournament {
     }
 
     public boolean checkTournyFin(){
-        if(players.size()<2){
+        if(teams.size()<2){
             return true;
         }
         else{return false;
@@ -125,40 +118,40 @@ public class Tournament {
                 int index1 = 0;
                 int index2 = 0;
                 int num = 0;
-                while(players.size()>1){
+                while(teams.size()>1){
                     Random rand = new Random();
-                    if(players.size()-2==0){
+                    if(teams.size()-2==0){
                         num = 1;
                     }
                     else{
-                        num = rand.nextInt(players.size()-2)+1;
+                        num = rand.nextInt(teams.size()-2)+1;
                     }
-                    games.add(new Game("game" + i, "123"+i, startTime, players.get(0),players.get(num)));
-                    List<Player> copy = new ArrayList<>();
+                    games.add(new Game("game" + i, "123"+i, startTime, teams.get(0), teams.get(num)));
+                    List<Team> copy = new ArrayList<>();
                     index2 = num;
-                    for (int j = 0; j < players.size(); j++) {
+                    for (int j = 0; j < teams.size(); j++) {
                         if (j != index1 && j != index2) {
-                        copy.add(players.get(j));
+                        copy.add(teams.get(j));
                         }
                         else{
-                            inGame.add(players.get(j));
+                            inGame.add(teams.get(j));
                         }
                     }
-                    players = copy;
+                    teams = copy;
                     i++;
                     if(i>10){
-                        players.clear();
+                        teams.clear();
                     }
                 }
             }
         }
     }
 
-    public List<Player> getInGame(){
+    public List<Team> getInGame(){
         return this.inGame;
     }
 
-    public List<Player> getElim(){
+    public List<Team> getElim(){
         return this.elim;
     }
     //This will need more methods but non are on the diagram as of right now.
