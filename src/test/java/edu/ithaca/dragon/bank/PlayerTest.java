@@ -86,4 +86,43 @@ class PlayerTest {
 
     }
 
+    @Test 
+    void modifyPlayTimeTest(){
+        Player amber1 = new Player("Amber", "2468", 8.0, 10.0);
+        Player amber2 = new Player("Amber", "2000", 15.0, 21.0);
+        
+        //No Time Conflicts
+        amber1.modifyPlayTime(8.0, 8.3);
+        amber2.modifyPlayTime(19.0, 20.3);
+        assertEquals("[8.0, 8.3]", amber1.getPlayTime().toString());
+        assertEquals("[19.0, 20.3]", amber2.getPlayTime().toString());
+
+        //Time Conflicts
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {amber1.modifyPlayTime(4.0, 7.0);});
+        assertEquals("Requested PlayTime is not available", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class, () -> {amber2.modifyPlayTime(16.0, 22.4);});
+        assertEquals("Requested PlayTime is not available", exception.getMessage());
+
+        //Zero and Negative tests
+        exception = assertThrows(IllegalArgumentException.class, () -> { amber1.modifyPlayTime(0.0, 0.0);});
+        assertEquals("Invalid time entries", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class, () -> { amber1.modifyPlayTime(0.0, 0.1);});
+        assertEquals("Invalid time entries", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class, () -> { amber1.modifyPlayTime(0.1, 0.5);});
+        assertEquals("Invalid time entries", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class, () -> {amber2.modifyPlayTime(-19.0, -20.30);});
+        assertEquals("Invalid time entries", exception.getMessage());
+        
+        exception = assertThrows(IllegalArgumentException.class, () -> {amber2.modifyPlayTime(-19.0, 20.30);});
+        assertEquals("Invalid time entries", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class, () -> {amber2.modifyPlayTime(19.0, -20.30);});
+        assertEquals("Invalid time entries", exception.getMessage());
+
+    }
+
 }
