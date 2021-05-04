@@ -32,7 +32,7 @@ public class CoordinatorTest {
         Coordinator newCoord = new Coordinator("2345");
 
         //Create a Tournament
-        newCoord.createTournament("Hockey", "1234", 0.0, teams);
+        newCoord.createTournament("Hockey", "1234", new Game(), 0.0, teams);
     }
 
     @Test

@@ -21,7 +21,7 @@ public class Coordinator {
 
     public Coordinator(String ID) throws IllegalArgumentException {
         this.ID = ID;
-        tournaments = new ArrayList<>();
+        tournaments = new ArrayList<Tournament>();
     }
 
     public String getID() {
