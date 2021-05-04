@@ -111,7 +111,7 @@ class Main {
                 newEndTime = endTime;
 
                 System.out.println(newName + ", you are now a player.\n" + "Your ID is " + newID + "\nYour new start time is at " +newStartTime + "\n" + "Your new end time is at " + endTime);
-                player1 = new Player(newName, newID, newStartTime, newEndTime);
+                player1.modifySchedule(newStartTime, newEndTime);
                 break;
             }
             else if(answer.equalsIgnoreCase("no")){
