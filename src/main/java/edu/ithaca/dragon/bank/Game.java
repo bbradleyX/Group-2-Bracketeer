@@ -1,5 +1,5 @@
 package edu.ithaca.dragon.bank;
-//import jdk.internal.net.http.common.Pair;
+
 import org.javatuples.Pair;
 
 public class Game {
@@ -8,6 +8,10 @@ public class Game {
     private int playerLimit;
     private Pair<Player,Player> players;
     private double startTime;
+    private Player winner;
+    private Player loser;
+    private Player player1;
+    private Player player2;
 
     /**
      * Constructor for the Player class
@@ -19,11 +23,14 @@ public class Game {
      */
 
     //Constructor - This method will need additional parameter for filling in players. and player limit
-    public Game(String name, String ID, double startTime,Pair<Player,Player> players) throws IllegalArgumentException {
+    public Game(String name, String ID, double startTime,Player player1, Player player2) throws IllegalArgumentException {
         this.name = name;
         this.ID = ID;
         this.startTime = startTime;
-        this.players = players;
+        this.player1 = player1;
+        this.player2 = player2;
+        this.winner = null;
+        this.loser = null;
     }
 
     public static boolean validateArguments(String name, String ID, double startTime) {
@@ -42,9 +49,33 @@ public class Game {
         return 0.0;//return this.playerLimit;
     }
 
+    public Player getWinner(){
+        return this.winner;
+    }
+
+    public Player getLoser(){
+        return this.loser;
+    }
+
+    public Player getPlayer1(){
+        return this.player1;
+    }
+
+    public Player getPlayer2(){
+        return this.player2;
+    }
+
     //needs an input for which team has won then returns that team and (moves them through the bracket)
     //Moving through bracket will most likely occur in the tournament class
-    public Player hasWon(Player winner) {
-       return null; //if() ;
+    public Void hasWon(Player win) {
+       if(player1.getID()==win.getID()){
+           this.winner = player1;
+           this.loser = player2;
+       }
+       if(player2.getID()==win.getID()){
+        this.winner = player2;
+        this.loser = player1;
+        }
+       return null;
     }
 }

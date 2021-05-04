@@ -1,8 +1,9 @@
 package edu.ithaca.dragon.bank;
+
 import java.util.HashMap;
-import java.util.Random;
 
 import org.javatuples.Pair;
+
 
 public class Coordinator {
     private String ID;
@@ -21,17 +22,13 @@ public class Coordinator {
         this.ID = ID;
     }
 
-    public static boolean validateArguments(String name, String ID, double startTime) {
-        return false;   
-    }
-
     public String getID() {
         return ID;
     }
 
     //This method creates a tournament and adds it to the list. May need additional parameters for teams participating
-    public void createTournament() {
-
+    public Void createTournament() {
+        return null;
     }
 
      //This method removes a tournament and adds it to the list. Needs parameter for selecting which tournament to remove

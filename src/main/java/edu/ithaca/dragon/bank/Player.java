@@ -6,7 +6,8 @@ public class Player {
     private String name;
     private String ID;
     private Pair<Double, Double> schedule;
-
+    private Pair<Double, Double> playTime;
+   
     /**
      * Constructor for the Player class
      * @param name must be a name consisting of at least 1 character, number, or symbol
@@ -20,6 +21,7 @@ public class Player {
             this.name = name;
             this.ID = ID;
             this.schedule = new Pair<>(startTime, endTime);
+            this.playTime = new Pair<>(0.0, 0.0);
         }
         else {
             throw new IllegalArgumentException("Cannot add player with invalid credentials.");
@@ -28,17 +30,21 @@ public class Player {
 
     public static boolean validateArguments(String name, String ID, double startTime, double endTime) {
         if (name.length() < 1) {
+            System.out.println("Name must consist of at least 1 character.");
             return false;
         }
         if (ID.length() != 4) {
+            System.out.println("ID must be a string of 4 numbers.");
             return false;
         }
         for (int i = 0; i < ID.length(); i++) {
             if ((ID.charAt(i) < 48) || (ID.charAt(i) > 57)) {
+                System.out.println("ID must be a string of 4 numbers.");
                 return false;
             }
         }
         if ((startTime < 0.0) || (startTime > 24.0) || (endTime < 0.0) || (endTime > 24.0)) {
+            System.out.println("Start/End time must each be a value between 0.0 and 24.0.");
             return false;
         }
         else{
@@ -57,14 +63,46 @@ public class Player {
     public Pair<Double, Double> getSchedule() {
         return schedule;
     }
+
+    public Pair<Double, Double> getPlayTime() {
+        return playTime;
+    }
+
     
     /**
-     * Changes the current player Time  
-     * @throws IllegalArgumentException if currentTime is the same a newTime
+     * Changes player's schedule
+     * @throws IllegalArgumentException no schedule
      */
-    public void modifySchedules(double startTime, double endTime){
-        
+    public void modifySchedule(double startTime, double endTime){ 
+        try {
+            this.schedule = new Pair<>(startTime, endTime);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("player has no schedule");
+        }
     }
+
+    /**
+     * Changes the player's PlayTime  
+     * @throws IllegalArgumentException for a time conflict
+     */
+    public void modifyPlayTime(double startTime, double endTime) throws IllegalArgumentException{ 
+        
+        if (startTime > 1.0 && endTime > 1.0 ){
+            if (startTime >= this.schedule.getValue0() && endTime <= this.schedule.getValue1()){
+                this.playTime = new Pair<>(startTime, endTime);
+            }
+            else{
+                throw new IllegalArgumentException("Requested PlayTime is not available");
+            }
+            
+        }
+        else{
+            throw new IllegalArgumentException("Invalid time entries");
+        }
+    }
+
+
+    
 
    
 }

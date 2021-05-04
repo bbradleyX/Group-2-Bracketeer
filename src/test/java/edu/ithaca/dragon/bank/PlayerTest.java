@@ -2,6 +2,7 @@ package edu.ithaca.dragon.bank;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -49,9 +50,78 @@ class PlayerTest {
     }
 
     @Test 
-    void modifySchedulesTest(){
+    void modifyScheduleTest(){
         Player amber = new Player("Amber", "2468", 8.0, 10.0);
+        amber.modifySchedule(4.0, 7.0);
+        assertEquals(4.0, amber.getSchedule().getValue0().doubleValue());
+        assertEquals(7.0, amber.getSchedule().getValue1().doubleValue());
+
+        //testing double 
+        Player amber1 = new Player("Amber", "2468", 8.0, 10.0);
+        amber1.modifySchedule(4.50, 7.50);
+        assertEquals(4.50, amber1.getSchedule().getValue0().doubleValue());
+        assertEquals(7.50, amber1.getSchedule().getValue1().doubleValue());
+
+        Player amber2 = new Player("Amber", "2468", 8.0, 10.0);
+        amber2.modifySchedule(4.59, 7.59);
+        assertEquals(4.59, amber2.getSchedule().getValue0().doubleValue());
+        assertEquals(7.59, amber2.getSchedule().getValue1().doubleValue());
+
+        Player amber3 = new Player("Amber", "2468", 8.43, 10.46);
+        amber3.modifySchedule(4.00, 7.5);
+        assertEquals(4.00, amber3.getSchedule().getValue0().doubleValue());
+        assertEquals(7.5, amber3.getSchedule().getValue1().doubleValue());
+
+        //zero test
+        Player amber4 = new Player("Amber", "2468", 8.0, 10.0);
+        amber4.modifySchedule(0, 0);
+        assertEquals(0, amber4.getSchedule().getValue0().doubleValue());
+        assertEquals(0, amber4.getSchedule().getValue1().doubleValue());
+
+        //no schedule
+        //Player amber5 = new Player("Amber", "2468", 0, 0);
+        //amber5.modifySchedule(10.0, 20.0);
+        //assertThrows(IllegalArgumentException.class, () -> amber5.getSchedule().getValue0().doubleValue());
+        //assertThrows(IllegalArgumentException.class, () -> amber5.getSchedule().getValue1().doubleValue());
+
+    }
+
+    @Test 
+    void modifyPlayTimeTest(){
+        Player amber1 = new Player("Amber", "2468", 8.0, 10.0);
+        Player amber2 = new Player("Amber", "2000", 15.0, 21.0);
         
+        //No Time Conflicts
+        amber1.modifyPlayTime(8.0, 8.3);
+        amber2.modifyPlayTime(19.0, 20.3);
+        assertEquals("[8.0, 8.3]", amber1.getPlayTime().toString());
+        assertEquals("[19.0, 20.3]", amber2.getPlayTime().toString());
+
+        //Time Conflicts
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {amber1.modifyPlayTime(4.0, 7.0);});
+        assertEquals("Requested PlayTime is not available", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class, () -> {amber2.modifyPlayTime(16.0, 22.4);});
+        assertEquals("Requested PlayTime is not available", exception.getMessage());
+
+        //Zero and Negative tests
+        exception = assertThrows(IllegalArgumentException.class, () -> { amber1.modifyPlayTime(0.0, 0.0);});
+        assertEquals("Invalid time entries", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class, () -> { amber1.modifyPlayTime(0.0, 0.1);});
+        assertEquals("Invalid time entries", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class, () -> { amber1.modifyPlayTime(0.1, 0.5);});
+        assertEquals("Invalid time entries", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class, () -> {amber2.modifyPlayTime(-19.0, -20.30);});
+        assertEquals("Invalid time entries", exception.getMessage());
+        
+        exception = assertThrows(IllegalArgumentException.class, () -> {amber2.modifyPlayTime(-19.0, 20.30);});
+        assertEquals("Invalid time entries", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class, () -> {amber2.modifyPlayTime(19.0, -20.30);});
+        assertEquals("Invalid time entries", exception.getMessage());
 
     }
 
