@@ -8,8 +8,7 @@ import org.javatuples.Pair;
 
 public class Coordinator {
     private String ID;
-    private Tournament[] tournaments;
-    private HashMap<Team> teams;
+    private HashMap<Tournament, ArrayList<Team>> events; 
     private boolean timeConflict;
     private PlayerMakerUI playerobj;
     //private TeamMakerUI teamobj;
@@ -23,7 +22,7 @@ public class Coordinator {
     public Coordinator(String ID) throws IllegalArgumentException {
         this.ID = ID;
         this.tournaments = null;
-        this.teams = new ArrayList<Team>();
+        this.teams = ;
     }
 
     public String getID() {
