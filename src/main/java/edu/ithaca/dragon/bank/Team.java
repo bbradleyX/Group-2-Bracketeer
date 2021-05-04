@@ -14,7 +14,6 @@ import org.javatuples.Pair;
 
 public class Team {
     private String teamName;
-    //private Pair<Double, Double> playTime;
     private LinkedHashMap<Player, Pair<Double, Double>> teamsMap;
 
     public Team(String teamName)throws InvalidParameterException{
@@ -24,7 +23,6 @@ public class Team {
         else{
             this.teamName = teamName;
             this.teamsMap = new LinkedHashMap<Player, Pair<Double, Double>>();
-            //this.playTime = null;
         }
 
     }
