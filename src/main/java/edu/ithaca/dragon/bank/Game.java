@@ -6,12 +6,12 @@ public class Game {
     private String name;
     private String ID;
     private int playerLimit;
-    private Pair<Player,Player> players;
+    private Pair<Team,Team> players;
     private double startTime;
-    private Player winner;
-    private Player loser;
-    private Player player1;
-    private Player player2;
+    private Team winner;
+    private Team loser;
+    private Team team1;
+    private Team team2;
 
     /**
      * Constructor for the Player class
@@ -23,12 +23,12 @@ public class Game {
      */
 
     //Constructor - This method will need additional parameter for filling in players. and player limit
-    public Game(String name, String ID, double startTime,Player player1, Player player2) throws IllegalArgumentException {
+    public Game(String name, String ID, double startTime, Team team1, Team team2) throws IllegalArgumentException {
         this.name = name;
         this.ID = ID;
         this.startTime = startTime;
-        this.player1 = player1;
-        this.player2 = player2;
+        this.team1 = team1;
+        this.team2 = team2;
         this.winner = null;
         this.loser = null;
     }
@@ -49,32 +49,32 @@ public class Game {
         return 0.0;//return this.playerLimit;
     }
 
-    public Player getWinner(){
+    public Team getWinner(){
         return this.winner;
     }
 
-    public Player getLoser(){
+    public Team getLoser(){
         return this.loser;
     }
 
-    public Player getPlayer1(){
-        return this.player1;
+    public Team getTeam1(){
+        return this.team1;
     }
 
-    public Player getPlayer2(){
-        return this.player2;
+    public Team getTeam2(){
+        return this.team2;
     }
 
     //needs an input for which team has won then returns that team and (moves them through the bracket)
     //Moving through bracket will most likely occur in the tournament class
-    public Void hasWon(Player win) {
-       if(player1.getID()==win.getID()){
-           this.winner = player1;
-           this.loser = player2;
+    public Void hasWon(Team win) {
+       if(team1.getTeamName().equals(win.getTeamName())){
+           this.winner = team1;
+           this.loser = team2;
        }
-       if(player2.getID()==win.getID()){
-        this.winner = player2;
-        this.loser = player1;
+       if(team2.getTeamName().equals(win.getTeamName())){
+        this.winner = team2;
+        this.loser = team1;
         }
        return null;
     }
