@@ -3,25 +3,8 @@ package edu.ithaca.dragon.bank;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import org.graalvm.compiler.nodes.PiArrayNode.Placeholder;
 
 public class CoordinatorUI {
-     /* */
-     private PlayerMakerUI playerobj;
-    private ;
-    //private PlayrUI;
-
-    /* public CoordinatorUI(String teamName)throws InvalidParameterException{
-        if (teamName == "" || teamName == " "){
-            throw new InvalidParameterException("Invalid Team Name");
-        }
-        else{
-            this.teamName = teamName;
-            this.teamsMap = new LinkedHashMap<Player, Pair<Double, Double>>();
-            //this.playTime = null;
-        }
-
-    } */
     public static void main(String[] args) {
         Scanner myScan = new Scanner(System.in);
 

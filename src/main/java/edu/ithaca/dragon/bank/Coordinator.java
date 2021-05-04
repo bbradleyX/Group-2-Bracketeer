@@ -1,5 +1,6 @@
 package edu.ithaca.dragon.bank;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.javatuples.Pair;
@@ -9,9 +10,10 @@ import org.javatuples.Pair;
 public class Coordinator {
     private String ID;
     private Tournament[] tournaments;
+    private HashMap<Team> teams;
     private boolean timeConflict;
-    //I am unsure how to initialize a hashmap. This line may need to be looked at
-    private HashMap schedule;
+    private PlayerMakerUI playerobj;
+    //private TeamMakerUI teamobj;
 
     /**
      * Constructor for the Coordinator class
@@ -21,6 +23,8 @@ public class Coordinator {
 
     public Coordinator(String ID) throws IllegalArgumentException {
         this.ID = ID;
+        this.tournaments = null;
+        this.teams = new ArrayList<Team>();
     }
 
     public String getID() {
@@ -39,6 +43,11 @@ public class Coordinator {
 
       //This method makes a team? might need an additional parameter for teamlist or some connection to team in diagram
     public Void createTeam() {
+        return null;
+    }
+
+    //This method makes a team? might need an additional parameter for teamlist or some connection to team in diagram
+    public Void removeTeam() {
         return null;
     }
 
