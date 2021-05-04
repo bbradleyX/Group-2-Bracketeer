@@ -3,10 +3,12 @@ package edu.ithaca.dragon.bank;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import org.graalvm.compiler.nodes.PiArrayNode.Placeholder;
+
 public class CoordinatorUI {
      /* */
-     private String teamName;
-    //private Pair<Double, Double> playTime;
+     private PlayerMakerUI playerobj;
+    private ;
     //private PlayrUI;
 
     /* public CoordinatorUI(String teamName)throws InvalidParameterException{
