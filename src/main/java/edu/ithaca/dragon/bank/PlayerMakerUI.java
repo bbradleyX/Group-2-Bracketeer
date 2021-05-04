@@ -2,7 +2,7 @@ package edu.ithaca.dragon.bank;
 import edu.ithaca.dragon.bank.Player;
 import java.util.Scanner;
 
-public class PlayerUI {
+public class PlayerMakerUI {
     
     /**
      * Check if user input correct name  
@@ -47,32 +47,52 @@ public class PlayerUI {
         //Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         
             System.out.println("Please enter your name:\n");
+<<<<<<< HEAD:src/main/java/edu/ithaca/dragon/bank/PlayerUI.java
             String name = scanner.nextLine();
             while(PlayerUI.isNameVaild(name) != true){
+=======
+            String name = myObj.nextLine();
+            while(PlayerMakerUI.isNameVaild(name) != true){
+>>>>>>> b3cee21b60ef928bf9d6b0ce6c1b34dda44ee110:src/main/java/edu/ithaca/dragon/bank/PlayerMakerUI.java
                 System.out.println("Please enter your name again:\n");
                 name = scanner.nextLine();
             }
             String newName = name;
             
             System.out.println("Please enter your ID number\n");
+<<<<<<< HEAD:src/main/java/edu/ithaca/dragon/bank/PlayerUI.java
             String ID = scanner.nextLine();
             while(PlayerUI.isIDVaild(ID) != true){
+=======
+            String ID = myObj.nextLine();
+            while(PlayerMakerUI.isIDVaild(ID) != true){
+>>>>>>> b3cee21b60ef928bf9d6b0ce6c1b34dda44ee110:src/main/java/edu/ithaca/dragon/bank/PlayerMakerUI.java
                 System.out.println("Please only enter four digit for your ID:\n"); 
                 ID = scanner.nextLine();
             }
             String newID = ID;
             
             System.out.println("Please enter the time to start\n");
+<<<<<<< HEAD:src/main/java/edu/ithaca/dragon/bank/PlayerUI.java
             double startTime = scanner.nextDouble();
             while (PlayerUI.isStartTimeVaild(startTime) != true){
+=======
+            double startTime = myObj.nextDouble();
+            while (PlayerMakerUI.isStartTimeVaild(startTime) != true){
+>>>>>>> b3cee21b60ef928bf9d6b0ce6c1b34dda44ee110:src/main/java/edu/ithaca/dragon/bank/PlayerMakerUI.java
                 System.out.println("Your start time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n");
                 startTime = scanner.nextDouble();
             }
             double newStartTime = startTime;
 
             System.out.println("Please enter the time to end\n");
+<<<<<<< HEAD:src/main/java/edu/ithaca/dragon/bank/PlayerUI.java
             double endTime = scanner.nextDouble();
             while( PlayerUI.isEndTimeVaild(endTime) != true){
+=======
+            double endTime = myObj.nextDouble();
+            while( PlayerMakerUI.isEndTimeVaild(endTime) != true){
+>>>>>>> b3cee21b60ef928bf9d6b0ce6c1b34dda44ee110:src/main/java/edu/ithaca/dragon/bank/PlayerMakerUI.java
                 System.out.println("Your end time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n");
                 endTime = scanner.nextDouble();
             }
@@ -94,16 +114,26 @@ public class PlayerUI {
 
             if(answer.equalsIgnoreCase("yes") ){
                 System.out.println("Please enter the time to start\n");
+<<<<<<< HEAD:src/main/java/edu/ithaca/dragon/bank/PlayerUI.java
                 startTime = scanner.nextDouble();
                 while (PlayerUI.isStartTimeVaild(startTime) != true){
+=======
+                startTime = myObj.nextDouble();
+                while (PlayerMakerUI.isStartTimeVaild(startTime) != true){
+>>>>>>> b3cee21b60ef928bf9d6b0ce6c1b34dda44ee110:src/main/java/edu/ithaca/dragon/bank/PlayerMakerUI.java
                     System.out.println("Your start time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n");
                     startTime = scanner.nextDouble();
                 }
                 newStartTime = startTime;
 
                 System.out.println("Please enter the time to end\n");
+<<<<<<< HEAD:src/main/java/edu/ithaca/dragon/bank/PlayerUI.java
                 endTime = scanner.nextDouble();
                 while( PlayerUI.isEndTimeVaild(endTime) != true){
+=======
+                endTime = myObj.nextDouble();
+                while( PlayerMakerUI.isEndTimeVaild(endTime) != true){
+>>>>>>> b3cee21b60ef928bf9d6b0ce6c1b34dda44ee110:src/main/java/edu/ithaca/dragon/bank/PlayerMakerUI.java
                     System.out.println("Your end time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n");
                     endTime = scanner.nextDouble();
                 }

@@ -14,6 +14,7 @@ import org.javatuples.Pair;
 
 public class Team {
     private String teamName;
+    //private Pair<Double, Double> playTime;
     private LinkedHashMap<Player, Pair<Double, Double>> teamsMap;
 
     public Team(String teamName)throws InvalidParameterException{
@@ -23,6 +24,7 @@ public class Team {
         else{
             this.teamName = teamName;
             this.teamsMap = new LinkedHashMap<Player, Pair<Double, Double>>();
+            //this.playTime = null;
         }
 
     }
@@ -46,11 +48,11 @@ public class Team {
         }
         if(teamsMap.size() < 1){
             System.out.println("Adding first new player "+ player.getName() +" to "+ teamName+ "...");
-            teamsMap.put(player, player.getSchedule());
+            teamsMap.put(player, player.getPlayTime());
         }
         else{
             System.out.println("Adding new player "+ player.getName() +" to "+ teamName+ "...");
-            teamsMap.put(player, player.getSchedule());
+            teamsMap.put(player, player.getPlayTime());
             }
         }
 
@@ -79,7 +81,7 @@ public class Team {
         String info = "";
         for ( Player key : teamsMap.keySet() ) {
             if (key.getID() == playerID){
-                info += "Found Player "+ key.getID()+"->\t" +"Player Name: " + key.getName()+", Player Schedule: "+ key.getSchedule()+"\n";
+                info += "Found Player "+ key.getID()+"->\t"+"Player Name: " + key.getName()+", PlayTime: "+ key.getPlayTime()+", Player Schedule: "+ key.getSchedule()+"\n";
             }
         }
         if(info.isBlank()){
@@ -101,7 +103,7 @@ public class Team {
             String info = "\nTeam Info For "+getTeamName()+ ":\n";
             for ( Player key : teamsMap.keySet() ) {
             Player player = key;
-            info += "Player ID: "+ player.getID() +", Player Name: " + player.getName()+", Player Schedule: "+ player.getSchedule().toString() + "\n";
+            info += "Player ID: "+ player.getID() +", Player Name: " + player.getName()+", PlayTime: "+ player.getPlayTime().toString() + "\n";
             }
             return info;
         }
@@ -114,7 +116,7 @@ public class Team {
         while(iterator.hasNext()) {
             Map.Entry item = (Map.Entry)iterator.next();
             Player player = (Player) item.getKey();
-            scheduleInfo += "Player: "+ player.getName() +", Schedule: "+ item.getValue()+ "\n";
+            scheduleInfo += "Player: "+ player.getName() +", PlayTime: "+ item.getValue()+ "\n";
        }
        if(scheduleInfo.isBlank()){
         throw new IndexOutOfBoundsException("This team list is empty. There are no players in this team.");
