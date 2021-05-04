@@ -6,6 +6,7 @@ public class Player {
     private String name;
     private String ID;
     private Pair<Double, Double> schedule;
+    private Pair<Double, Double> playTime;
    
     /**
      * Constructor for the Player class
@@ -20,6 +21,7 @@ public class Player {
             this.name = name;
             this.ID = ID;
             this.schedule = new Pair<>(startTime, endTime);
+            this.playTime = new Pair<>(0.0, 0.0);
         }
         else {
             throw new IllegalArgumentException("Cannot add player with invalid credentials.");
@@ -61,9 +63,14 @@ public class Player {
     public Pair<Double, Double> getSchedule() {
         return schedule;
     }
+
+    public Pair<Double, Double> getPlayTime() {
+        return playTime;
+    }
+
     
     /**
-     * Changes the current player Time  
+     * Changes player's schedule
      * @throws IllegalArgumentException no schedule
      */
     public void modifySchedule(double startTime, double endTime){ 
@@ -71,6 +78,26 @@ public class Player {
             this.schedule = new Pair<>(startTime, endTime);
         } catch (Exception e) {
             throw new IllegalArgumentException("player has no schedule");
+        }
+    }
+
+    /**
+     * Changes the player's PlayTime  
+     * @throws IllegalArgumentException for a time conflict
+     */
+    public void modifyPlayTime(double startTime, double endTime) throws IllegalArgumentException{ 
+        
+        if (startTime > 1.0 && endTime > 1.0 ){
+            if (startTime >= this.schedule.getValue0() && endTime <= this.schedule.getValue1()){
+                this.playTime = new Pair<>(startTime, endTime);
+            }
+            else{
+                throw new IllegalArgumentException("Requested PlayTime is not available");
+            }
+            
+        }
+        else{
+            throw new IllegalArgumentException("Invalid time entries");
         }
     }
 
