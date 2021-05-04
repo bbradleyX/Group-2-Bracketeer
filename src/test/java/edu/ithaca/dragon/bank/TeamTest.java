@@ -17,10 +17,14 @@ public class TeamTest {
     void getTeamNameTest(){
         Team team1 = createTeamForTest("Team 1");
         Team team2 = createTeamForTest("Team2");
+        Team team3 = createTeamForTest("Team");
+        Team team4 = createTeamForTest("1234");
 
         //Unit Test for team names
         assertEquals("Team 1", team1.getTeamName());
         assertEquals("Team2", team2.getTeamName());
+        assertEquals("Team", team3.getTeamName());
+        assertEquals("1234", team4.getTeamName());
 
         Throwable exception = assertThrows(InvalidParameterException.class, () -> {createTeamForTest("");});
         assertEquals("Invalid Team Name", exception.getMessage());
