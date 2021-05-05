@@ -20,19 +20,18 @@ public class Tournament {
     private List<Game> games;
 
     /**
-     * Constructor for the Player class
+     * Constructor for the Tournament class
      * @param name must be a name consisting of at least 1 character, number, or symbol
      * @param ID must be a string of 4 numbers
      * @param startTime must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time
-     * @param players2 is a list of players in the teams participating in the event
      * @throws IllegalArgumentException for any arguments that violate the above rules
      */
 
-    public Tournament(String name, String ID, double startTime, List<Team> teams) throws IllegalArgumentException {
+    public Tournament(String name, String ID, double startTime) throws IllegalArgumentException {
         this.name = name;
         this.ID = ID;
         this.startTime = startTime;
-        this.teams = teams;
+        this.teams = new ArrayList<Team>();
         this.group = 0;
         this.games = new ArrayList<>();
         this.inGame = new ArrayList<>();
