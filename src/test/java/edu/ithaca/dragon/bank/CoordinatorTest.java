@@ -38,4 +38,47 @@ public class CoordinatorTest {
         assertEquals(true, newCoord2.isTimeconflict(b.getSchedule(), 8.0)); 
         
     }
+
+    @Test
+    void createTeamTest() {
+        //Create Coordinator
+        Coordinator coordinator = new Coordinator("0000");
+
+        //Create Tournament
+        coordinator.createTournament("Tournament1", "1234", 9.0);
+
+        //Call createTeam()
+        coordinator.createTeam("Tournament1", "Team1");
+
+        //Assert there is 1 team in the Coordinator object's list of Tournament objects
+        assertEquals(1, coordinator.getTournaments().get(0).getTeams().size());
+
+        //Assert that two teams with the same name cannot be added to the same tournament
+        coordinator.createTeam("Tournament1", "Team1");
+        assertEquals(1, coordinator.getTournaments().get(0).getTeams().size());
+    }
+
+    void removeTeamTest() {
+        //Create Coordinator
+        Coordinator coordinator = new Coordinator("0000");
+
+        //Create Tournament
+        coordinator.createTournament("Tournament1", "1234", 9.0);
+
+        //Call createTeam()
+        coordinator.createTeam("Tournament1", "Team1");
+
+        //Assert there is 1 team in the Coordinator object's list of Tournament objects
+        assertEquals(1, coordinator.getTournaments().get(0).getTeams().size());
+
+        //Call removeTeam()
+        coordinator.removeTeam("Tournament1", "Team1");
+
+        //Assert there are 0 teams in the Coordinator object's list of Tournament objects
+        assertEquals(0, coordinator.getTournaments().get(0).getTeams().size());
+
+        //Assert that it is not possible to remove a team from a tournament with 0 teams
+        coordinator.removeTeam("Tournament1", "Team1");
+        assertEquals(0, coordinator.getTournaments().get(0).getTeams().size());
+    }
 }
