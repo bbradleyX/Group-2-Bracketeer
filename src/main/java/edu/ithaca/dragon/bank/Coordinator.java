@@ -52,7 +52,7 @@ public class Coordinator {
      * Creates a team and adds them to a tournament
      * @param 
      */
-    public void createTeam() {
+    public void createTeam(String tournamentName, String teamName){
         ;
     }
 
@@ -81,5 +81,9 @@ public class Coordinator {
         else{
             return false;
         }
+    }
+
+    public ArrayList<Tournament> getTournaments(){
+        return tournaments;
     }
 }
