@@ -8,10 +8,10 @@ import org.javatuples.Pair;
 
 public class Coordinator {
     private String ID;
-    private HashMap<String, Tournament> events; 
+    private HashMap<String, Tournament> eventTracker; 
     private boolean timeConflict;
     private PlayerMakerUI playerobj;
-    //private TeamMakerUI teamobj;
+    private TeamMakerUI teamobj;
 
     /**
      * Constructor for the Coordinator class
@@ -21,35 +21,71 @@ public class Coordinator {
 
     public Coordinator(String ID) throws IllegalArgumentException {
         this.ID = ID;
-        this.events= new HashMap<>()
+        this.eventTracker= new HashMap<String, Tournament>();
+        this.playerobj = null;
+        this.teamobj = null;
+        this.timeConflict = false;
     }
 
     public String getID() {
         return ID;
     }
 
-    //This method creates a tournament and adds it to the list. May need additional parameters for teams participating
-    public Void createTournament() {
-        return null;
+    public HashMap<String,Tournament> getEventTracker() {
+        return eventTracker;
+    }
+
+    public PlayerMakerUI getPlayerMakerObject() {
+        return playerobj;
+    }
+
+    public TeamMakerUI getTeamMakerObject() {
+        return teamobj;
+    }
+
+    public boolean getTimeCOnflict() {
+        return timeConflict;
+    }
+
+    //This uses a TeamMakerUI object to add a team to the Event Tracker map. might need an additional parameter for teamlist or some connection to team in diagram
+    public void addTeam(Team team) {
+    }
+
+    //Removes a team from the the Event Tracker map.
+    public void removeTeam() {
+    }
+
+    //This method creates a tournament and adds it to the list. Calls Tournament and Game constructors
+    public void createTournament(String tournamentName, String gameName) {
     }
 
      //This method removes a tournament and adds it to the list. Needs parameter for selecting which tournament to remove
-    public Void removeTournament() {
-        return null;
+    public void removeTournament() {
     }
 
-      //This method makes a team? might need an additional parameter for teamlist or some connection to team in diagram
-    public Void createTeam() {
-        return null;
-    }
-
-    //This method makes a team? might need an additional parameter for teamlist or some connection to team in diagram
-    public Void removeTeam() {
-        return null;
-    }
-
-      //This methods sees if any players have a time conflict
-    public boolean isTimeconflict(Pair<Double, Double> playerTime, double tournTime) {
+      //This methods checks if there is a time conflict from a player within a team based on the start time of a tournament
+    public boolean isTimeconflict(double tournTime) {
         return false;
     }
+
+    //This method removes a tournament and adds it to the list. Needs parameter for selecting which tournament to remove
+    public String showTournament(String teamName) {
+        return null;
+    }
+
+    //This method removes a tournament and adds it to the list. Needs parameter for selecting which tournament to remove
+    public String showTeams(String tournamentID) {
+        return null;
+    }
+
+    //This method removes a tournament and adds it to the list. Needs parameter for selecting which tournament to remove
+    public String showAllTournaments() {
+        return null;
+    }
+
+    //This method shows all active teams that are in a tournament
+    public String showAllTeams() {
+        return null;
+    }
+
 }
