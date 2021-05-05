@@ -29,9 +29,9 @@ public class Coordinator {
     }
 
     //This method creates a tournament and adds it to the list. May need additional parameters for teams participating
-    public void createTournament(String name, String ID, Game gameType, double startTime, ArrayList<Team> teams) {
+    public void createTournament(String name, String ID, double startTime) {
         if (Tournament.validateArguments(name, ID, startTime)){
-            tournaments.add(new Tournament(name, ID, gameType, startTime, teams));
+            tournaments.add(new Tournament(name, ID, startTime));
         }
         else{
             System.out.println("Failed to create tournament.");
