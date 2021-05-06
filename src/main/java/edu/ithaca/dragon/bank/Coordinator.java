@@ -21,7 +21,7 @@ public class Coordinator {
 
     public Coordinator(String ID) throws IllegalArgumentException {
         this.ID = ID;
-        this.events= new HashMap<>()
+        this.events= new HashMap<>();
     }
 
     public String getID() {
