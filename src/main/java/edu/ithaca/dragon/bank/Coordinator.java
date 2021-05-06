@@ -62,7 +62,21 @@ public class Coordinator {
      * @param teamName name of the team to be removed
      */
     public void removeTeam(String tournamentName, String teamName){
-        ;
+        for (int i = 0; i < tournaments.size(); i++){
+            if (tournamentName.equalsIgnoreCase(tournaments.get(i).getName())){
+                for (int j = 0; j < tournaments.get(i).getTeams().size(); j++){
+                    if (tournaments.get(i).getTeams().get(j).getTeamName().equalsIgnoreCase(teamName)){
+                        tournaments.get(i).getTeams().remove(j);
+                    }
+                    else{
+                        System.out.println("No such team exists.");
+                    }
+                }
+            }
+            else{
+                System.out.println("No such tournament exists.");
+            }
+        }
     }
 
        //this method creates a bracket for a tournament

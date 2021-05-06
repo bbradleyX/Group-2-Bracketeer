@@ -116,39 +116,55 @@ public class CoordinatorUI {
                         System.out.println("2. Remove a team");
                         System.out.println("3. Add players to a team");
                         System.out.println("4. Remove players from a team");
-                        System.out.println("5. Manage time conflicts");
-                        System.out.println("6. Create a round");
-                        System.out.println("7. Update a round");
-                        System.out.println("8. Main Menu");
+                        System.out.println("5. Create a round");
+                        System.out.println("6. Update a round");
+                        System.out.println("7. Main Menu");
                         int actionSelection = myScanner.nextInt();
-                        while (actionSelection < 1 || actionSelection > 8){
+                        while (actionSelection < 1 || actionSelection > 7){
                             System.out.println("Invalid input. Select a corresponding number for an action:");
                             actionSelection = myScanner.nextInt();
                         }
                         if (actionSelection == 1){
-                            ;
+                            coordinator.getTournaments().get(tournamentIndex).getTeams().add(TeamMakerUI.runTeamMakerUI(myScanner));
                         }
                         else if (actionSelection == 2){
-                            ;
+                            System.out.println("Enter the name of the team you wish to remove:");
+                            String removeTeam = myScanner.next();
+                            coordinator.removeTeam(coordinator.getTournaments().get(tournamentIndex).getName(), removeTeam);
                         }
                         else if (actionSelection == 3){
-                            ;
+                            System.out.println("Enter the name of the team you wish to add a player to:");
+                            String addPlayerTeam = myScanner.next();
+                            for (int i = 0; i < coordinator.getTournaments().get(tournamentIndex).getTeams().size(); i++){
+                                if (coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeamName().equalsIgnoreCase(addPlayerTeam)){
+                                    coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).addPlayer(PlayerMakerUI.runUI(myScanner));
+                                }
+                            }
                         }
                         else if (actionSelection == 4){
-                            ;
+                            System.out.println("Enter the name of the team you wish to remove a player from:");
+                            String removePlayerTeam = myScanner.next();
+                            System.out.println("Enter the ID of the player you wish to remove:");
+                            String removePlayerID = myScanner.next();
+                            for (int i = 0; i < coordinator.getTournaments().get(tournamentIndex).getTeams().size(); i++){
+                                if (coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeamName().equalsIgnoreCase(removePlayerTeam)){
+                                    coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).removePlayer(removePlayerID);
+                                }
+                            }
                         }
                         else if (actionSelection == 5){
-                            ;
+                            coordinator.getTournaments().get(tournamentIndex).createRound();
                         }
                         else if (actionSelection == 6){
-                            ;
+                            coordinator.getTournaments().get(tournamentIndex).updateRound();
                         }
                         else if (actionSelection == 7){
-                            ;
+                            System.out.println("Returning...");
                         }
-                        else if (actionSelection == 8){
-                            ;
-                        }
+                    }
+                    else if (mainMenuSelection == 3){
+                        coordinator.getTournaments().clear();
+                        runProgram = false;
                     }
                 }
             }
