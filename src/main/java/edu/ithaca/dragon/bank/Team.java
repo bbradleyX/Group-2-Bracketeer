@@ -31,6 +31,9 @@ public class Team {
         if (teamName == "" || teamName == " "){
             return false;
         }
+        else if(teamName.length() < 1){
+            return false;
+        }
         else{
             return true;
         }
