@@ -1,4 +1,4 @@
-### Group-2-Bracketeer
+# Group-2-Bracketeer
 COMP 345 - Group 2 Dev
 Adam: Yes!
 Amber:Yes Yes
@@ -6,9 +6,9 @@ Bria: Hi!
 Eli: Yes!
 Nusi: YEAHHH!!
 
-Project Title: Tournament organizer 
+# Project Title: Tournament organizer 
 
-Summary/Description
+### Summary/Description
 The tournament organizer automatically puts teams against each other based on round-robin placement matches. This organizer will auto fill as the tournament goes on all the way to the finals. The intended audience is the tournament creators. This tournament organizer is limited to best two out of three, no loser bracket. The motivation for the system so it does not need to be done by hand and will update based on the winners, as this task can be tedious. This also gets rid of error if this is done by hand. The system provides a bracket layout for the tournament showing who has won and who is moving on. This is done all automatically as the tournament progresses.
 
 
@@ -43,7 +43,7 @@ Sprint 2 Diagrams: https://app.diagrams.net/#G1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL
 ## Sprint 3
 Sprint 3 Goal: User Interfaces complete and tested as well as have full capability of running tournaments
 
-Sprint 3 Review Agenda: 
+Sprint 3 Review Agenda: https://docs.google.com/document/d/1fdvj2wIBiBnqHp6WmDFFx-3xG1MhliH7rU7Or83RzPI/edit
 
 Sprint 3 Retrospective Meeting: 
 
