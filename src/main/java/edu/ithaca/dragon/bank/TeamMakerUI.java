@@ -12,7 +12,7 @@ public class TeamMakerUI {
         System.out.println("You are now creating a Team\n");
 
         System.out.println("Enter the Team name: ");
-        String name = scanner.nextLine();
+        String name = scanner.next();
         while(!(Team.isValidName(name))){//calls the method isValidName so that the user enters a valid name for the team
             System.out.println("Error!");
             System.out.println("Please enter your Team name again: ");
