@@ -44,7 +44,7 @@ public class PlayerMakerUI {
         return true;
     }
 
-    public static void runUI(Scanner scanner){
+    public static Player runUI(Scanner scanner){
         System.out.println("You are now creating player\n");
         //Scanner scanner = new Scanner(System.in);  // Create a Scanner object
         
@@ -94,8 +94,10 @@ public class PlayerMakerUI {
             System.out.println("\n");
             System.out.println("----------");
             System.out.println(newName + ", you are now a player.\n" + "Your ID is " + newID + "\nYou will start at " +newStartTime + "\n" + "You will end at " + endTime + "\n");
-            Player player1 = new Player(newName, newID, newStartTime, newEndTime);
+            Player player = new Player(newName, newID, newStartTime, newEndTime);
+            return player;
         
+        /**
         //Modify user schedule
         System.out.println("Would you like to change your time? (yes or no)\n");
         String answer = scanner.nextLine();
@@ -140,7 +142,8 @@ public class PlayerMakerUI {
                 System.out.println("Have a great game!\n");
                 break;
             }
-        } 
+        }
+        */ 
     }
 
     //...
