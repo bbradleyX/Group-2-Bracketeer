@@ -52,7 +52,7 @@ public class Coordinator {
      * Creates a team and adds them to a tournament
      * @param 
      */
-    public void createTeam(String tournamentName, String teamName){
+    public void createTeam(String tournamentName, String teamName) throws IllegalArgumentException{
         ;
     }
 
@@ -62,7 +62,24 @@ public class Coordinator {
      * @param teamName name of the team to be removed
      */
     public void removeTeam(String tournamentName, String teamName){
-        ;
+        for(int i = 0; i < tournaments.size(); i++){
+            if (tournamentName.equalsIgnoreCase(tournaments.get(i).getName())){
+                if(tournaments.get(i).getTeams().size() > 0){
+                    for(int j = 0; j < tournaments.get(i).getTeams().size(); j++){
+                        if(tournaments.get(i).getTeams().get(j).getTeamName().equalsIgnoreCase(teamName)){
+                            tournaments.get(i).getTeams().remove(j);
+                            System.out.println("Team removed successfully!");
+                        }
+                    }
+                }
+                else{
+                    System.out.println("Can't remove a team from a tournament without teams.");
+                }
+            }
+            else{
+                System.out.println("No such team exists within this tournament.");
+            }
+        }
     }
 
        //this method creates a bracket for a tournament
