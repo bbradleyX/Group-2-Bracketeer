@@ -107,7 +107,8 @@ public class PlayerMakerUI {
             answer = scanner.nextLine();
 
             if(answer.equalsIgnoreCase("yes")){
-               while (PlayerMakerUI.isStartTimeVaild(startTime) != false){
+               startTime = -1;
+               while (PlayerMakerUI.isStartTimeVaild(startTime) != true){
                     try {
                         System.out.println("Please enter the new time to start\n");
                         startTime = scanner.nextDouble();
@@ -119,8 +120,8 @@ public class PlayerMakerUI {
                 }
                 double newStartTimeTwo = startTime;
             
-            
-                while( PlayerMakerUI.isEndTimeVaild(endTime) != false){
+                endTime = -1;
+                while( PlayerMakerUI.isEndTimeVaild(endTime) != true){
                     try{
                         System.out.println("Please enter the new time to end\n");
                         endTime = scanner.nextDouble();
@@ -134,8 +135,9 @@ public class PlayerMakerUI {
 
                 System.out.println("\n");
                 System.out.println("----------");
-                System.out.println(newName + ", you are now a player.\n" + "Your ID is " + newID + "\nYour new start time is at " +newStartTime + "\n" + "Your new end time is at " + endTime);
                 player1.modifySchedule(newStartTimeTwo, newEndTimeTwo);
+                System.out.println(newName + ", you are now a player.\n" + "Your ID is " + newID + "\nYour new start time is at " +newStartTimeTwo + "\n" + "Your new end time is at " + newEndTimeTwo);
+
                 break;
             }
             if(answer.equalsIgnoreCase("no")){
