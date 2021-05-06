@@ -57,6 +57,7 @@ public class CoordinatorTest {
         assertThrows(IllegalArgumentException.class, () -> coordinator.createTeam("Tournament1", "Team1"));
     }
 
+    @Test
     void removeTeamTest() {
         //Create Coordinator
         Coordinator coordinator = new Coordinator("0000");
@@ -65,15 +66,15 @@ public class CoordinatorTest {
         coordinator.createTournament("Tournament1", "1234", 9.0);
 
         //Call createTeam()
-        coordinator.createTeam("Tournament1", "Team1");
+        coordinator.getTournaments().get(0).getTeams().add(new Team("Team1"));
 
-        //Assert there is 1 team in the Coordinator object's list of Tournament objects
+        //Assert there is 1 team in the Coordinator object's Tournament object
         assertEquals(1, coordinator.getTournaments().get(0).getTeams().size());
 
         //Call removeTeam()
         coordinator.removeTeam("Tournament1", "Team1");
 
-        //Assert there are 0 teams in the Coordinator object's list of Tournament objects
+        //Assert there are 0 teams in the Coordinator object's Tournament object
         assertEquals(0, coordinator.getTournaments().get(0).getTeams().size());
 
         //Assert that it is not possible to remove a team from a tournament with 0 teams
