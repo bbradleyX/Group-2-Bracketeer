@@ -28,11 +28,11 @@ public class Tournament {
      * @throws IllegalArgumentException for any arguments that violate the above rules
      */
 
-    public Tournament(String name, String ID, double startTime, List<Team> teams) throws IllegalArgumentException {
+    public Tournament(String name, String ID, double startTime) throws IllegalArgumentException {
         this.name = name;
         this.ID = ID;
         this.startTime = startTime;
-        this.teams = teams;
+        this.teams = new ArrayList<Team>();
         this.group = 0;
         this.games = new ArrayList<>();
         this.inGame = new ArrayList<>();

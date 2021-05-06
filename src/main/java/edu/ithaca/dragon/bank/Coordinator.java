@@ -5,14 +5,14 @@ import java.util.HashMap;
 
 import org.javatuples.Pair;
 
-
 public class Coordinator {
     private String ID;
-    private HashMap<String, Tournament> events; 
+    private ArrayList<Tournament> tournaments;
     private boolean timeConflict;
     private PlayerMakerUI playerobj;
     //private TeamMakerUI teamobj;
 
+    //working 
     /**
      * Constructor for the Coordinator class
      * @param ID must be a string of 4 numbers
@@ -21,7 +21,7 @@ public class Coordinator {
 
     public Coordinator(String ID) throws IllegalArgumentException {
         this.ID = ID;
-        this.events= new HashMap<>();
+        tournaments = new ArrayList<Tournament>();
     }
 
     public String getID() {
@@ -29,27 +29,61 @@ public class Coordinator {
     }
 
     //This method creates a tournament and adds it to the list. May need additional parameters for teams participating
-    public Void createTournament() {
-        return null;
+    public void createTournament(String name, String ID, double startTime) {
+        if (Tournament.validateArguments(name, ID, startTime)){
+            tournaments.add(new Tournament(name, ID, startTime));
+        }
+        else{
+            System.out.println("Failed to create tournament.");
+        }
     }
 
      //This method removes a tournament and adds it to the list. Needs parameter for selecting which tournament to remove
-    public Void removeTournament() {
-        return null;
+    public void removeTournament(String name) {
+        for (int i = 0; i < tournaments.size(); i++){
+            if (name.equalsIgnoreCase(tournaments.get(i).getName())){
+                tournaments.remove(i);
+                System.out.println("Tournament removed successfully!");
+            }
+        }
     }
 
-      //This method makes a team? might need an additional parameter for teamlist or some connection to team in diagram
-    public Void createTeam() {
-        return null;
+    /**
+     * Creates a team and adds them to a tournament
+     * @param 
+     */
+    public void createTeam() {
+        ;
     }
 
-    //This method makes a team? might need an additional parameter for teamlist or some connection to team in diagram
-    public Void removeTeam() {
+    /**
+     * Removes a team from a tournament
+     * @param tournamentName name of the tournament that contains the desired team to be removed
+     * @param teamName name of the team to be removed
+     */
+    public void removeTeam(String tournamentName, String teamName){
+        ;
+    }
+
+       //this method creates a bracket for a tournament
+    public Void createBracket(Tournament tournament) {
         return null;
     }
 
       //This methods sees if any players have a time conflict
-    public boolean isTimeconflict(Pair<Double, Double> playerTime, double tournTime) {
-        return false;
+      public boolean isTimeconflict(Pair<Double, Double> playerTime, double tournTime) {
+          if(tournTime < 0){
+              return false;
+            }
+          if(tournTime >= playerTime.getValue0() && tournTime <= playerTime.getValue1()){
+              return true;
+            }
+        else{
+            return false;
+        }
+    }
+
+    public ArrayList<Tournament> getTournaments(){
+        return this.tournaments;
     }
 }

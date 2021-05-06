@@ -28,6 +28,7 @@
  *          print(5. Manage time conflicts)
  *          print(6. Create a round)
  *          print(7. Update a round)
+ *          print(8. Main Menu)
  *          scanner.nextInt to select desired action
  * 7. if (Option 3)
  *      close UI
@@ -45,6 +46,112 @@ public class CoordinatorUI {
 
         boolean runProgram = true;
         while (runProgram){
-            if(coordinator.)
+            if (coordinator.getTournaments().size() == 0){
+                System.out.println("There are currently no running tournaments. Would you like to create one? (yes/no)");
+                String makeTournament = myScanner.next();
+                while (!(makeTournament.equals("yes") || makeTournament.equals("no"))){
+                    System.out.println("Invalid input. There are currently no running tournaments. Would you like to create one? (yes/no)");
+                }
+                if (makeTournament.equals("no")){
+                    runProgram = false;
+                }
+                else{
+                    boolean tournamentCredentialsValid = false;
+                    while(tournamentCredentialsValid == false){
+                        System.out.println("Enter a name for the tournament: (at least one character)");
+                        String nameIn = myScanner.next();
+                        System.out.println("Enter an ID for the tournament: (four digits)");
+                        String IDIn = myScanner.next();
+                        System.out.println("Enter a start for the tournament: (between 0.0 and 24.0, in the format x.x)");
+                        double startTimeIn = myScanner.nextDouble();
+                        if (Tournament.validateArguments(nameIn, IDIn, startTimeIn)){
+                            coordinator.createTournament(nameIn, IDIn, startTimeIn);
+                            tournamentCredentialsValid = true;
+                        }
+                    }
+                }
+                while (coordinator.getTournaments().size() > 0){
+                    System.out.println("Enter the corresponding number for one of the options below:");
+                    System.out.println("1. Create a new tournament");
+                    System.out.println("2. Update an existing tournament");
+                    System.out.println("3. Close out all tournaments");
+                    int mainMenuSelection = myScanner.nextInt();
+                    while (mainMenuSelection < 1 || mainMenuSelection > 3){
+                        System.out.println("Invalid input.");
+                        System.out.println("Enter the corresponding number for one of the options below:");
+                        System.out.println("1. Create a new tournament");
+                        System.out.println("2. Update an existing tournament");
+                        System.out.println("3. Close out all tournaments");
+                        mainMenuSelection = myScanner.nextInt();
+                    }
+                    if (mainMenuSelection == 1){
+                        boolean tournamentCredentialsValid = false;
+                        while(tournamentCredentialsValid == false){
+                            System.out.println("Enter a name for the tournament: (at least one character)");
+                            String nameIn = myScanner.next();
+                            System.out.println("Enter an ID for the tournament: (four digits)");
+                            String IDIn = myScanner.next();
+                            System.out.println("Enter a start for the tournament: (between 0.0 and 24.0, in the format x.x)");
+                            double startTimeIn = myScanner.nextDouble();
+                            if (Tournament.validateArguments(nameIn, IDIn, startTimeIn)){
+                                coordinator.createTournament(nameIn, IDIn, startTimeIn);
+                                tournamentCredentialsValid = true;
+                            }
+                        }
+                    }
+                    else if (mainMenuSelection == 2){
+                        System.out.println("Enter the corresponding number for one of the tournaments below:");
+                        for (int i = 0; i < coordinator.getTournaments().size(); i++){
+                            int menuNumber = i+1;
+                            System.out.println(menuNumber + ". " + coordinator.getTournaments().get(i).getName());
+                        }
+                        int tournamentSelection = myScanner.nextInt();
+                        while ((tournamentSelection < 1) || (tournamentSelection > coordinator.getTournaments().size())){
+                            System.out.println("Invalid input. Enter the corresponding number for one of the tournaments:");
+                            tournamentSelection = myScanner.nextInt();
+                        }
+                        int tournamentIndex = tournamentSelection - 1;
+                        System.out.println("Select the corresponding number for an action below:");
+                        System.out.println("1. Create a team");
+                        System.out.println("2. Remove a team");
+                        System.out.println("3. Add players to a team");
+                        System.out.println("4. Remove players from a team");
+                        System.out.println("5. Manage time conflicts");
+                        System.out.println("6. Create a round");
+                        System.out.println("7. Update a round");
+                        System.out.println("8. Main Menu");
+                        int actionSelection = myScanner.nextInt();
+                        while (actionSelection < 1 || actionSelection > 8){
+                            System.out.println("Invalid input. Select a corresponding number for an action:");
+                            actionSelection = myScanner.nextInt();
+                        }
+                        if (actionSelection == 1){
+                            ;
+                        }
+                        else if (actionSelection == 2){
+                            ;
+                        }
+                        else if (actionSelection == 3){
+                            ;
+                        }
+                        else if (actionSelection == 4){
+                            ;
+                        }
+                        else if (actionSelection == 5){
+                            ;
+                        }
+                        else if (actionSelection == 6){
+                            ;
+                        }
+                        else if (actionSelection == 7){
+                            ;
+                        }
+                        else if (actionSelection == 8){
+                            ;
+                        }
+                    }
+                }
+            }
         }
     }
+}
