@@ -54,8 +54,7 @@ public class CoordinatorTest {
         assertEquals(1, coordinator.getTournaments().get(0).getTeams().size());
 
         //Assert that two teams with the same name cannot be added to the same tournament
-        coordinator.createTeam("Tournament1", "Team1");
-        assertEquals(1, coordinator.getTournaments().get(0).getTeams().size());
+        assertThrows(IllegalArgumentException.class, () -> coordinator.createTeam("Tournament1", "Team1"));
     }
 
     void removeTeamTest() {
