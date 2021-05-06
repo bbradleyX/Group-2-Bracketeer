@@ -2,6 +2,9 @@ package edu.ithaca.dragon.bank;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import javax.swing.text.StyledEditorKit.ItalicAction;
+
 import java.io.*;
 
 //import jdk.internal.net.http.common.Pair;
@@ -153,6 +156,26 @@ public class Tournament {
 
     public List<Team> getElim(){
         return this.elim;
+    }
+
+    public void roundRobin(){
+        List<List<Team>> groups = new ArrayList<>();
+        int numGrp = teams.size()/3;
+        for(int j=0;j<numGrp;j++){
+            List<Team> e = new ArrayList<>();
+            groups.add(e);
+        }
+        for(int i=0; i<teams.size();i++){
+            int grpNum = i%numGrp;
+            groups.get(grpNum).add(teams.get(i));
+        }
+        for(int k = 0; k<groups.size();k++){
+            for(int l = 0; l<groups.get(k).size();l++){
+                for(int m=l+1; m<groups.get(k).size();m++){
+                    games.add(new Game("game" + k + "-" + m + l, "1"+k+m+l, startTime, groups.get(k).get(l), groups.get(k).get(m)));
+                }
+            }
+        }
     }
     //This will need more methods but non are on the diagram as of right now.
 }

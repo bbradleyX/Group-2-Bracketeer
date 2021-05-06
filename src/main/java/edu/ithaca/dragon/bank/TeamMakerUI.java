@@ -1,46 +1,35 @@
 package edu.ithaca.dragon.bank;
 
 import java.util.Scanner;
+//import edu.ithaca.dragon.bank.PlayerMakerUI;
+import edu.ithaca.dragon.bank.Team;
 
 public class TeamMakerUI {
 
-    public static boolean isIDVaild(String ID){
-        while(ID.length() != 4){
-            return false;
-        }
-        return true;
-    }
-
-    public static void runTeamMakerUI(Scanner scanner){
+    //This method runs UI for teamMaker that takes in a scanner, and then returns the team object
+    public static Team runTeamMakerUI(Scanner scanner){
         System.out.println("---------------------\n");
         System.out.println("You are now creating a Team\n");
 
-        System.out.println("Enter the player name: ");
+        System.out.println("Enter the Team name: ");
         String name = scanner.nextLine();
-        while(Team.isValidName(name)){
+        while(!(Team.isValidName(name))){//calls the method isValidName so that the user enters a valid name for the team
             System.out.println("Error!");
-            System.out.println("Please enter your player name again: ");
-         name = scanner.nextLine();
+            System.out.println("Please enter your Team name again: ");
+            name = scanner.nextLine();
         }
+        String teamName = name;
+        Team newTeam = new Team(teamName);//Creates a new object of team with the user's team name
 
-        String userName = name; 
-
-        System.out.println("Enter player's ID: ");
-        String id = scanner.nextLine();
-        while(TeamMakerUI.isIDVaild(id)){
-            System.out.println("Error!");
-            System.out.println("Please enter player's ID again: ");
-            id = scanner.nextLine();
-        }
-        String userID = id;
+        return newTeam;
+        
 
     }
+    //This automatically runs the runTeamMakerUI as well as creates a new scanner so it multiply of scanners aren't being created
     public static void main(String args[]){
         Scanner scanner = new Scanner(System.in);
         runTeamMakerUI(scanner);
         scanner.close();
     }
 
-    public static void runTeamMakerUI(int nextInt) {
-    }
 }

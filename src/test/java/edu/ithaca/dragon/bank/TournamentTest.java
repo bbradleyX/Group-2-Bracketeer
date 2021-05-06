@@ -138,6 +138,30 @@ class TournamentTest {
             assertEquals(4,tournament.getElim().size());
 
         }
-
+        @Test
+        void roundRobinTest(){
+            List<Team> teams = new ArrayList<>();
+            teams.add(new Team("A"));
+            teams.add(new Team("B"));
+            teams.add(new Team("C"));
+            teams.add(new Team("D"));
+            teams.add(new Team("E"));
+            teams.add(new Team("F"));
+            Tournament tournament = new Tournament("tourny1", "1234", 9.0, teams); 
+            tournament.roundRobin();
+            assertEquals(6,tournament.getGames().size());
+            assertEquals(teams.get(0),tournament.getGames().get(0).getTeam1());
+            assertEquals(teams.get(2),tournament.getGames().get(0).getTeam2());
+            assertEquals(teams.get(0),tournament.getGames().get(1).getTeam1());
+            assertEquals(teams.get(4),tournament.getGames().get(1).getTeam2());
+            assertEquals(teams.get(2),tournament.getGames().get(2).getTeam1());
+            assertEquals(teams.get(4),tournament.getGames().get(2).getTeam2());
+            assertEquals(teams.get(1),tournament.getGames().get(3).getTeam1());
+            assertEquals(teams.get(3),tournament.getGames().get(3).getTeam2());
+            assertEquals(teams.get(1),tournament.getGames().get(4).getTeam1());
+            assertEquals(teams.get(5),tournament.getGames().get(4).getTeam2());
+            assertEquals(teams.get(3),tournament.getGames().get(5).getTeam1());
+            assertEquals(teams.get(5),tournament.getGames().get(5).getTeam2());
+        }
 
     }
