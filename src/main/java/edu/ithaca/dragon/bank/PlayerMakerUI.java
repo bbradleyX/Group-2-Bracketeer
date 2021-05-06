@@ -143,8 +143,8 @@ public class PlayerMakerUI {
 
                 System.out.println("\n");
                 System.out.println("----------");
-                System.out.println(newName + ", you are now a player.\n" + "Your ID is " + newID + "\nYour new start time is at " +newStartTimeTwo + "\n" + "Your new end time is at " + newEndTimeTwo);
                 player2.modifySchedule(newStartTimeTwo, newEndTimeTwo);
+                System.out.println(newName + ", you are now a player.\n" + "Your ID is " + newID + "\nYour new start time is at " +newStartTimeTwo + "\n" + "Your new end time is at " + newEndTimeTwo);
                 break;
             }
             if(answer.equalsIgnoreCase("no")){
