@@ -5,7 +5,7 @@ import org.javatuples.Pair;
 public class Game {
     private String name;
     private String ID;
-    private int playerLimit;
+    private int teamLimit;
     private Pair<Team,Team> players;
     private double startTime;
     private Team winner;
