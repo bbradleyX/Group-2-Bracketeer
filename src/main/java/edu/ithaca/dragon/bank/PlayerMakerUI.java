@@ -1,11 +1,15 @@
 package edu.ithaca.dragon.bank;
 
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PlayerMakerUI {
     
+    private static String newID;
+    private static String newName;
+    private static double startTime;
+    private static double endTime;
+
     /**
      * Check if user input correct name  
      */
@@ -44,7 +48,7 @@ public class PlayerMakerUI {
         return true;
     }
 
-    public static void runUI(Scanner scanner){
+    public static Player runUI(Scanner scanner){
         System.out.println("You are now creating player\n");
         //Scanner scanner = new Scanner(System.in);  // Create a Scanner object
         
@@ -54,7 +58,7 @@ public class PlayerMakerUI {
                 System.out.println("Please enter your name again:\n");
                 name = scanner.nextLine();
             }
-            String newName = name;
+            newName = name;
             
             System.out.println("Please enter your ID number\n");
             String ID = scanner.nextLine();
@@ -62,7 +66,7 @@ public class PlayerMakerUI {
                 System.out.println("Please only enter four digit for your ID:\n"); 
                 ID = scanner.nextLine();
             }
-            String newID = ID;
+            newID = ID;
             
             
             double startTime = -1;
@@ -90,13 +94,17 @@ public class PlayerMakerUI {
                 }
             }
             double newEndTime = endTime;
-            
+
             System.out.println("\n");
             System.out.println("----------");
             System.out.println(newName + ", you are now a player.\n" + "Your ID is " + newID + "\nYou will start at " +newStartTime + "\n" + "You will end at " + endTime + "\n");
             Player player1 = new Player(newName, newID, newStartTime, newEndTime);
+            
+            return (player1);
         
-        //Modify user schedule
+    }
+
+    protected static void runModifySchedule(Scanner scanner){        
         System.out.println("Would you like to change your time? (yes or no)\n");
         String answer = scanner.nextLine();
          
@@ -105,7 +113,7 @@ public class PlayerMakerUI {
             answer = scanner.nextLine();
 
             if(answer.equalsIgnoreCase("yes")){
-               startTime = -1;
+                startTime = -1;
                while (PlayerMakerUI.isStartTimeVaild(startTime) != true){
                     try {
                         System.out.println("Please enter the new time to start\n");
@@ -131,23 +139,23 @@ public class PlayerMakerUI {
                 }
                 double newEndTimeTwo = endTime;
 
+                Player player2 = new Player(newName, newID, newStartTimeTwo, newEndTimeTwo); 
+
                 System.out.println("\n");
                 System.out.println("----------");
-                player1.modifySchedule(newStartTimeTwo, newEndTimeTwo);
                 System.out.println(newName + ", you are now a player.\n" + "Your ID is " + newID + "\nYour new start time is at " +newStartTimeTwo + "\n" + "Your new end time is at " + newEndTimeTwo);
-
+                player2.modifySchedule(newStartTimeTwo, newEndTimeTwo);
                 break;
             }
             if(answer.equalsIgnoreCase("no")){
                 System.out.println("Have a great game!\n");
                 break;
             }
-        } 
+        }
     }
 
-    //...
-    public static void runUI(int nextInt) {
-    }
+    
+
 }
 
 

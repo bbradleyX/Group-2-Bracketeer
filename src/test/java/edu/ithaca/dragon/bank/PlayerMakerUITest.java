@@ -23,6 +23,7 @@ class PlayerMakerUITest extends PlayerMakerUI{
         Scanner scanner = new Scanner(System.in);
         //runUI method is in the PlayerMakerUI class 
         runUI(scanner);
+        runModifySchedule(scanner);
         scanner.close();
     }
     
