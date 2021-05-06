@@ -1,5 +1,7 @@
 package edu.ithaca.dragon.bank;
-import edu.ithaca.dragon.bank.Player;
+
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PlayerMakerUI {
@@ -62,19 +64,30 @@ public class PlayerMakerUI {
             }
             String newID = ID;
             
-            System.out.println("Please enter the time to start\n");
-            double startTime = scanner.nextDouble();
+            
+            double startTime = -1;
             while (PlayerMakerUI.isStartTimeVaild(startTime) != true){
-                System.out.println("Your start time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n");
-                startTime = scanner.nextDouble();
+                try {
+                    System.out.println("Please enter the time to start\n");
+                    startTime = scanner.nextDouble();
+                }
+                catch (InputMismatchException e)
+                {
+                    System.out.println("Your start time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n"); 
+                    scanner.nextLine();}
             }
             double newStartTime = startTime;
-
-            System.out.println("Please enter the time to end\n");
-            double endTime = scanner.nextDouble();
+            
+            double endTime = -1;
             while( PlayerMakerUI.isEndTimeVaild(endTime) != true){
-                System.out.println("Your end time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n");
-                endTime = scanner.nextDouble();
+                try{
+                    System.out.println("Please enter the time to end\n");
+                    endTime = scanner.nextDouble();
+                }
+                catch (InputMismatchException e){
+                    System.out.println("Your end time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n");
+                    scanner.nextLine();
+                }
             }
             double newEndTime = endTime;
             
@@ -86,45 +99,51 @@ public class PlayerMakerUI {
         //Modify user schedule
         System.out.println("Would you like to change your time? (yes or no)\n");
         String answer = scanner.nextLine();
-        scanner.nextLine();   
-
-        while(answer != "yes" || answer !="no"){
+         
+        while(!(answer.equalsIgnoreCase("yes"))  || !(answer.equalsIgnoreCase("no"))){
             System.out.println("Please enter yes or no\n");
             answer = scanner.nextLine();
 
-            if(answer.equalsIgnoreCase("yes") ){
-                System.out.println("Please enter the time to start\n");
-                startTime = scanner.nextDouble();
-                while (PlayerMakerUI.isStartTimeVaild(startTime) != true){
-                    System.out.println("Your start time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n");
-                    startTime = scanner.nextDouble();
+            if(answer.equalsIgnoreCase("yes")){
+               while (PlayerMakerUI.isStartTimeVaild(startTime) != false){
+                    try {
+                        System.out.println("Please enter the new time to start\n");
+                        startTime = scanner.nextDouble();
+                    }
+                    catch (InputMismatchException e)
+                    {
+                        System.out.println("Your start time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n"); 
+                        scanner.nextLine();}
                 }
-                newStartTime = startTime;
-
-                System.out.println("Please enter the time to end\n");
-                endTime = scanner.nextDouble();
-                while( PlayerMakerUI.isEndTimeVaild(endTime) != true){
-                    System.out.println("Your end time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n");
-                    endTime = scanner.nextDouble();
+                double newStartTimeTwo = startTime;
+            
+            
+                while( PlayerMakerUI.isEndTimeVaild(endTime) != false){
+                    try{
+                        System.out.println("Please enter the new time to end\n");
+                        endTime = scanner.nextDouble();
+                    }
+                    catch (InputMismatchException e){
+                        System.out.println("Your end time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n");
+                        scanner.nextLine();
+                    }
                 }
-                newEndTime = endTime;
+                double newEndTimeTwo = endTime;
 
+                System.out.println("\n");
+                System.out.println("----------");
                 System.out.println(newName + ", you are now a player.\n" + "Your ID is " + newID + "\nYour new start time is at " +newStartTime + "\n" + "Your new end time is at " + endTime);
-                player1.modifySchedule(newStartTime, newEndTime);
+                player1.modifySchedule(newStartTimeTwo, newEndTimeTwo);
                 break;
             }
-            else if(answer.equalsIgnoreCase("no")){
+            if(answer.equalsIgnoreCase("no")){
                 System.out.println("Have a great game!\n");
                 break;
-                }
+            }
         } 
     }
-    public static void main(String args[]){
-        Scanner scanner = new Scanner(System.in);
-        runUI(scanner);
-        scanner.close();
-    }
 
+    //...
     public static void runUI(int nextInt) {
     }
 }
