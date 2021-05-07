@@ -21,12 +21,15 @@ GitHub: https://github.com/bbradleyX/Group-2-Bracketeer.git
 Project Folder (Google Drive): https://drive.google.com/drive/folders/1OIzB6NRB93VdPahTLLmjbHnbeGQwexo-?usp=sharing
 
 ### Sequence diagrams
-Amber:https://drive.google.com/file/d/1Jr5Z7gJwsj-taG5TDUJOeAVofXn2Zi5a/view?usp=sharing 
-Eli:
-Bria:
-Nusi:
-Adam:
+Amber:https://drive.google.com/file/d/1Jr5Z7gJwsj-taG5TDUJOeAVofXn2Zi5a/view?usp=sharing
 
+Eli:
+
+Bria:
+
+Nusi:
+
+Adam:
 
 
 ## Sprint 1
