@@ -20,6 +20,15 @@ GitHub: https://github.com/bbradleyX/Group-2-Bracketeer.git
 
 Project Folder (Google Drive): https://drive.google.com/drive/folders/1OIzB6NRB93VdPahTLLmjbHnbeGQwexo-?usp=sharing
 
+### Sequence diagrams
+Amber:https://drive.google.com/file/d/1Jr5Z7gJwsj-taG5TDUJOeAVofXn2Zi5a/view?usp=sharing 
+Eli:
+Bria:
+Nusi:
+Adam:
+
+
+
 ## Sprint 1
 Sprint 1 Goal : make sure players are in events and see their schedules in order to fix time conflicts
 
@@ -50,9 +59,3 @@ Sprint 3 Retrospective Meeting: https://docs.google.com/document/d/1eJ0pTM38NPrh
 Sprint 3 Diagrams: https://app.diagrams.net/#G1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
-                        Sequence diagrams
-Amber:https://drive.google.com/file/d/1Jr5Z7gJwsj-taG5TDUJOeAVofXn2Zi5a/view?usp=sharing 
-Eli:
-Bria:
-Nusi:
-Adam:
