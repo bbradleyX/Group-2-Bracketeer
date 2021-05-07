@@ -48,3 +48,11 @@ Sprint 3 Review Agenda: https://docs.google.com/document/d/1fdvj2wIBiBnqHp6WmDFF
 Sprint 3 Retrospective Meeting: 
 
 Sprint 3 Diagrams: https://app.diagrams.net/#G1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+                        Sequence diagrams
+Amber:https://drive.google.com/file/d/1Jr5Z7gJwsj-taG5TDUJOeAVofXn2Zi5a/view?usp=sharing 
+Eli:
+Bria:
+Nusi:
+Adam:
