@@ -21,6 +21,8 @@ public class TeamMakerUI {
         String teamName = name;
         Team newTeam = new Team(teamName);//Creates a new object of team with the user's team name
 
+        System.out.println("You have now created Team" + newTeam.getTeamName());
+
         return newTeam;
         
 
