@@ -177,8 +177,56 @@ public class CoordinatorUI {
                         }
                         //Update a round
                         else if (actionSelection == 9){
+                            System.out.println("Games in Progress");
+                            for(int i =0;i<coordinator.getTournaments().get(tournamentIndex).getGames().size();i++){
+                                System.out.println("Match " + i+1 + ": " + coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam1() + "  versus  " + coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam2());
+                            }
+                            while(actionSelection!=0){
+                                System.out.println("select game number to update or 0 to continue");
+                                int actionSelection = myScanner.nextInt();
+                                while (actionSelection < 1 || actionSelection > coordinator.getTournaments().get(tournamentIndex).getGames().size() ){
+                                    System.out.println("Invalid input. Select a corresponding number for an action:");
+                                    actionSelection = myScanner.nextInt();
+                                }
+                                if (actionSelection!=0){
+                                int actionSelection2 = 1;
+                                while(actionSelection2!=1){
+                                    System.out.println("Select the corresponding number for an action below:");
+                                    System.out.println("0: Back");
+                                    System.out.println("1: View Teams");
+                                    System.out.println("2: Select Winner");
+                                    actionSelection2 = myScanner.nextInt();
+                                    while (actionSelection2 < 0 || actionSelection2 > 2){
+                                        System.out.println("Invalid input. Select a corresponding number for an action:");
+                                        actionSelection2 = myScanner.nextInt();
+                                    }
+                                    if (actionSelection2 == 1){
+                                        System.out.println("Team1: " +  coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam1());
+                                        System.out.println("Team2: " + coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam2());
+                                    }
+                                    else if (actionSelection2 == 2){
+                                        int actionSelection3;
+                                        System.out.println("Select the corresponding number for an action below:");
+                                        System.out.println("1: " + coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam1() + " wins");
+                                        System.out.println("2: " + coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam2() + " wins");
+                                        actionSelection3 = myScanner.next();
+                                        coordinator.removeTeam(coordinator.getTournaments().get(tournamentIndex).getName(), removeTeam);
+                                        while (actionSelection3 < 1 || actionSelection3 > 2){
+                                            System.out.println("Invalid input. Select a corresponding number for an action:");
+                                            actionSelection3 = myScanner.nextInt();
+                                        }
+                                        if(actionSelection3==1){
+                                            coordinator.getTournaments().get(tournamentIndex).getGames().get(i).haswon(coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam1());
+                                        }
+                                        else if(actionSelection3==2){
+                                            coordinator.getTournaments().get(tournamentIndex).getGames().get(i).haswon(coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam2());
+                                        }
+                                    }
+                                }
+                                coordinator.getTournaments().get(tournamentIndex).updateRound();
+                            }
                             coordinator.getTournaments().get(tournamentIndex).updateRound();
-                        }
+                        }}
                         //Return to main menu
                         else if (actionSelection == 10){
                             System.out.println("Returning...");
