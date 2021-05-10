@@ -28,7 +28,7 @@ Eli:
 Bria: https://bit.ly/3heU4m0 "Bria - Sequence Diagram"
 
 
-Nusi:
+Nusi: https://drive.google.com/file/d/1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL/view?usp=sharing "Nusi - Sequence Diagram" 
 
 Adam:
 
