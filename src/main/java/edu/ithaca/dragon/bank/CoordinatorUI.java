@@ -178,7 +178,7 @@ public class CoordinatorUI {
                         //Update a round
                         else if (actionSelection == 9){
                             System.out.println("Games in Progress");
-                            for(int i =0;i<coordinator.getTournaments().get(tournamentIndex).getGames().size();i++){
+                            for(int i=0;i<coordinator.getTournaments().get(tournamentIndex).getGames().size();i++){
                                 System.out.println("Match " + i+1 + ": " + coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam1() + "  versus  " + coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam2());
                             }
                             while(actionSelection!=0){
@@ -209,7 +209,7 @@ public class CoordinatorUI {
                                         System.out.println("Select the corresponding number for an action below:");
                                         System.out.println("1: " + coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam1() + " wins");
                                         System.out.println("2: " + coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam2() + " wins");
-                                        actionSelection3 = myScanner.next();
+                                        actionSelection3 = myScanner.nextInt();
                                         coordinator.removeTeam(coordinator.getTournaments().get(tournamentIndex).getName(), removeTeam);
                                         while (actionSelection3 < 1 || actionSelection3 > 2){
                                             System.out.println("Invalid input. Select a corresponding number for an action:");
