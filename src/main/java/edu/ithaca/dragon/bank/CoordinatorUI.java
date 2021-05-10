@@ -125,7 +125,8 @@ public class CoordinatorUI {
                             actionSelection = myScanner.nextInt();
                         }
                         if (actionSelection == 1){
-                            coordinator.getTournaments().get(tournamentIndex).getTeams().add(TeamMakerUI.runTeamMakerUI(myScanner));
+                            coordinator.getTournaments().get(tournamentIndex).getTeams().add(TeamMakerUI.runTeamMakerUI());
+                            actionSelection = myScanner.nextInt();
                         }
                         else if (actionSelection == 2){
                             System.out.println("Enter the name of the team you wish to remove:");

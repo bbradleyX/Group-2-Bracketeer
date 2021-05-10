@@ -28,7 +28,7 @@ public class Team {
     }
 
     public static boolean isValidName(String teamName){ //A bug here, where it doesn't properly define an actual team name //Answer: a team name is up to the discretion of the players
-        if (teamName == "" || teamName == " "){
+        if (teamName.isBlank() || teamName.isBlank()){
             return false;
         }
         else if(teamName.length() < 1){

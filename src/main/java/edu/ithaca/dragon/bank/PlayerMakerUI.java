@@ -52,7 +52,7 @@ public class PlayerMakerUI {
         System.out.println("You are now creating player\n");
         //Scanner scanner = new Scanner(System.in);  // Create a Scanner object
         
-            System.out.println("Please enter your name:\n");
+            System.out.println("Please enter your name:");
             String name = scanner.nextLine();
             while(PlayerMakerUI.isNameVaild(name) != true){
                 System.out.println("Please enter your name again:\n");
@@ -60,7 +60,7 @@ public class PlayerMakerUI {
             }
             newName = name;
             
-            System.out.println("Please enter your ID number\n");
+            System.out.println("\nPlease enter your ID number:");
             String ID = scanner.nextLine();
             while(PlayerMakerUI.isIDVaild(ID) != true){
                 System.out.println("Please only enter four digit for your ID:\n"); 
