@@ -116,28 +116,22 @@ public class CoordinatorUI {
                         System.out.println("2. Remove a team");
                         System.out.println("3. Add players to a team");
                         System.out.println("4. Remove players from a team");
-                        System.out.println("5. Manage time conflict");
-                        System.out.println("6. View teams in a tournament");
-                        System.out.println("7. View players in a team");
-                        System.out.println("8. Create a round");
-                        System.out.println("9. Update a round");
-                        System.out.println("10. Main Menu");
+                        System.out.println("5. Create a round");
+                        System.out.println("6. Update a round");
+                        System.out.println("7. Main Menu");
                         int actionSelection = myScanner.nextInt();
                         while (actionSelection < 1 || actionSelection > 7){
                             System.out.println("Invalid input. Select a corresponding number for an action:");
                             actionSelection = myScanner.nextInt();
                         }
-                        //Create a team
                         if (actionSelection == 1){
                             coordinator.getTournaments().get(tournamentIndex).getTeams().add(TeamMakerUI.runTeamMakerUI(myScanner));
                         }
-                        //Remove a team
                         else if (actionSelection == 2){
                             System.out.println("Enter the name of the team you wish to remove:");
                             String removeTeam = myScanner.next();
                             coordinator.removeTeam(coordinator.getTournaments().get(tournamentIndex).getName(), removeTeam);
                         }
-                        //Add players to a team
                         else if (actionSelection == 3){
                             System.out.println("Enter the name of the team you wish to add a player to:");
                             String addPlayerTeam = myScanner.next();
@@ -147,40 +141,28 @@ public class CoordinatorUI {
                                 }
                             }
                         }
-                        //Remove players from a team
                         else if (actionSelection == 4){
                             System.out.println("Enter the name of the team you wish to remove a player from:");
                             String removePlayerTeam = myScanner.next();
                             System.out.println("Enter the ID of the player you wish to remove:");
-                            String removePlayerID = myScanner.next();
+                            String removePlayerID = myScanner.nextLine();
                             for (int i = 0; i < coordinator.getTournaments().get(tournamentIndex).getTeams().size(); i++){
                                 if (coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeamName().equalsIgnoreCase(removePlayerTeam)){
+                                    
+                                    System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeamInfo());
+                                    System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getPlayerInfo(removePlayerID));
+
                                     coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).removePlayer(removePlayerID);
                                 }
                             }
                         }
-                        //Manage time conflicts
                         else if (actionSelection == 5){
-                            ;
-                        }
-                        //View teams in tournament
-                        else if (actionSelection == 6){
-                            ;
-                        }
-                        //View players in a team
-                        else if (actionSelection == 7){
-                            ;
-                        }
-                        //Create a round
-                        else if (actionSelection == 8){
                             coordinator.getTournaments().get(tournamentIndex).createRound();
                         }
-                        //Update a round
-                        else if (actionSelection == 9){
+                        else if (actionSelection == 6){
                             coordinator.getTournaments().get(tournamentIndex).updateRound();
                         }
-                        //Return to main menu
-                        else if (actionSelection == 10){
+                        else if (actionSelection == 7){
                             System.out.println("Returning...");
                         }
                     }
