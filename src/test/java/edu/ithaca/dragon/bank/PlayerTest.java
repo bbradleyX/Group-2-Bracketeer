@@ -56,6 +56,12 @@ class PlayerTest {
         assertEquals(4.0, amber.getSchedule().getValue0().doubleValue());
         assertEquals(7.0, amber.getSchedule().getValue1().doubleValue());
 
+        //no double
+        Player amber5 = new Player("Amber", "2468", 8.0, 10.0);
+        amber5.modifySchedule(4, 7);
+        assertEquals(4, amber5.getSchedule().getValue0().doubleValue());
+        assertEquals(7, amber5.getSchedule().getValue1().doubleValue());
+
         //testing double 
         Player amber1 = new Player("Amber", "2468", 8.0, 10.0);
         amber1.modifySchedule(4.50, 7.50);
