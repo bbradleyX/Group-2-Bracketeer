@@ -155,10 +155,15 @@ public class CoordinatorUI {
                             String removePlayerID = myScanner.next();
                             for (int i = 0; i < coordinator.getTournaments().get(tournamentIndex).getTeams().size(); i++){
                                 if (coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeamName().equalsIgnoreCase(removePlayerTeam)){
-                                    coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).removePlayer(removePlayerID);
+                                    System.out.println(removePlayerID);
+                                    System.out.println(removePlayerTeam);
+                                    System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeamInfo());
+                                    //System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getPlayerInfo());
+                                    coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).removePlayer(removePlayerID.toString());
+                                    //if(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).removePlayer(removePlayerID)){}
                                 }
-                            }
-                        }
+                             }
+                        } 
                         //Manage time conflicts
                         else if (actionSelection == 5){
                             ;
