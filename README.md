@@ -25,7 +25,7 @@ Amber:https://drive.google.com/file/d/1Jr5Z7gJwsj-taG5TDUJOeAVofXn2Zi5a/view?usp
 
 Eli:
 
-Bria: [https://bit.ly/3heU4m0 "Bria - Sequence Diagram"]
+Bria: https://bit.ly/3heU4m0 "Bria - Sequence Diagram"
 
 
 Nusi:
