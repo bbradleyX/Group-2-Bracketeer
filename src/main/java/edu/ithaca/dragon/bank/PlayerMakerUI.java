@@ -104,7 +104,7 @@ public class PlayerMakerUI {
         
     }
 
-    protected static void runModifySchedule(Scanner scanner){        
+    protected static void runModifyScheduleUI(Scanner scanner){        
         System.out.println("Would you like to change your time? (yes or no)\n");
         String answer = scanner.nextLine();
          
