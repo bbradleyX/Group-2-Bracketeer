@@ -161,8 +161,16 @@ public class CoordinatorUI {
                         }
                         //Manage time conflicts
                         else if (actionSelection == 5){
+                            //Loop through teams
                             for (int i = 0; i < coordinator.getTournaments().get(tournamentIndex).getTeams().size(); i++){
-                                for (int j = 0; j < coordinator.getTournaments().get(tournamentIndex).getTeams().get(j).g
+                                //Loop through players
+                                for (Player key : coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeam().keySet()){
+                                    //If player start time is later than tournament start time
+                                    if (key.getSchedule().getValue0() > coordinator.getTournaments().get(tournamentIndex).getStartTime()){
+                                        System.out.println(key.getName() + "has time conflict!");
+                                        Player.
+                                    }
+                                }
                             }
                         }
                         //View teams in tournament
