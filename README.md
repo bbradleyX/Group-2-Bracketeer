@@ -26,14 +26,13 @@ Project Folder (Google Drive): https://drive.google.com/drive/folders/1OIzB6NRB9
 ### Sequence diagrams
 Amber:https://drive.google.com/file/d/1Jr5Z7gJwsj-taG5TDUJOeAVofXn2Zi5a/view?usp=sharing
 
-Eli:https://drive.google.com/file/d/1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL/view?usp=sharing
+Eli:  https://drive.google.com/file/d/1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL/view?usp=sharing
 
 Bria: https://bit.ly/3heU4m0 "Bria - Sequence Diagram"
 
-
 Nusi: https://drive.google.com/file/d/1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL/view?usp=sharing "Nusi - Sequence Diagram" 
 
-Adam:
+Adam: https://drive.google.com/file/d/1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL/view?usp=sharing "Adam - Sequence Diagram"
 
 
 ## Sprint 1
