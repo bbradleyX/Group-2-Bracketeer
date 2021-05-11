@@ -31,7 +31,7 @@ Eli:https://bit.ly/3xZGjO1 "Eli- Sequence Diagram"
 Bria: https://bit.ly/3heU4m0 "Bria - Sequence Diagram"
 
 
-Nusi: https://drive.google.com/file/d/1cZE0QRHJrl1Lf6Q_lvxmTfMPh8IGV6RL/view?usp=sharing "Nusi - Sequence Diagram" 
+Nusi: https://bit.ly/3hiAVzt "Nusi - Sequence Diagram" 
 
 Adam:
 
