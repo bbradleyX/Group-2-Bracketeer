@@ -111,6 +111,7 @@ public class CoordinatorUI {
                             tournamentSelection = myScanner.nextInt();
                         }
                         int tournamentIndex = tournamentSelection - 1;
+                        int actionSelection = 0;
                         while(actionSelection!=10){
                         System.out.println("Select the corresponding number for an action below:");
                         System.out.println("1. Create a team");
@@ -123,7 +124,7 @@ public class CoordinatorUI {
                         System.out.println("8. Create a round");
                         System.out.println("9. Update a round");
                         System.out.println("10. Main Menu");
-                        int actionSelection = myScanner.nextInt();
+                        actionSelection = myScanner.nextInt();
                         while (actionSelection < 1 || actionSelection > 10){
                             System.out.println("Invalid input. Select a corresponding number for an action:");
                             actionSelection = myScanner.nextInt();
@@ -178,15 +179,17 @@ public class CoordinatorUI {
                         }
                         //Update a round
                         else if (actionSelection == 9){
-                            int updateSelection;
+                            int updateSelection = 1;
                             while(updateSelection!=0){
                                 if(coordinator.getTournaments().get(tournamentIndex).getGames().size()==0){
                                     System.out.println("There are no games in progress");
                                 }
                                 else{
                                     System.out.println("Games in Progress");
+                                    int roundIndex = 0;
                                     for(int i=0;i<coordinator.getTournaments().get(tournamentIndex).getGames().size();i++){
-                                        System.out.println("Match " + i+1 + ": " + coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam1().getTeamName() + "  versus  " + coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam2().getTeamName());
+                                        roundIndex = i + 1;
+                                        System.out.println("Match " + roundIndex + ": " + coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam1().getTeamName() + "  versus  " + coordinator.getTournaments().get(tournamentIndex).getGames().get(i).getTeam2().getTeamName());
                                     }
                                 }
                                 System.out.println("");
@@ -233,11 +236,15 @@ public class CoordinatorUI {
                                 }
                                 coordinator.getTournaments().get(tournamentIndex).updateRound();
                             }
-                            coordinator.getTournaments().get(tournamentIndex).updateRound();
-                            if(coordinator.getTournaments().get(tournamentIndex).checkTournyFin() && coordinator.getTournaments().get(tournamentIndex).isRoundComplete()){
-                                System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(0).getName() + " has won the tournament!");
-                            }
-                        }}
+                            
+                        }   
+                        coordinator.getTournaments().get(tournamentIndex).updateRound();
+                        if(coordinator.getTournaments().get(tournamentIndex).checkTournyFin() && coordinator.getTournaments().get(tournamentIndex).isRoundComplete()){
+                            System.out.println("");
+                            System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(0).getTeamName() + " has won the tournament!");
+                            System.out.println("");
+                        }
+                    }
                         //Return to main menu
                         else if (actionSelection == 10){
                             System.out.println("Returning...");
