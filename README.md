@@ -24,16 +24,16 @@ GitHub: https://github.com/bbradleyX/Group-2-Bracketeer.git
 Project Folder (Google Drive): https://drive.google.com/drive/folders/1OIzB6NRB93VdPahTLLmjbHnbeGQwexo-?usp=sharing
 
 ### Sequence diagrams
-Amber:https://drive.google.com/file/d/1Jr5Z7gJwsj-taG5TDUJOeAVofXn2Zi5a/view?usp=sharing
+Amber: https://bit.ly/2Q7HfPf "Amber - Sequence Diagram"
 
-Eli:https://bit.ly/3xZGjO1 "Eli- Sequence Diagram"
+Eli: https://bit.ly/3xZGjO1 "Eli - Sequence Diagram"
 
 Bria: https://bit.ly/3heU4m0 "Bria - Sequence Diagram"
 
 
 Nusi: https://bit.ly/3hiAVzt "Nusi - Sequence Diagram" 
 
-Adam:
+Adam: https://bit.ly/3fovtsD "Adam - Sequence Diagram"
 
 
 ## Sprint 1
