@@ -202,6 +202,7 @@ public class CoordinatorUI {
                     }
                     else if (mainMenuSelection == 3){
                         coordinator.getTournaments().clear();
+                        System.out.println("Thank you for using Bracketeer!");
                         runProgram = false;
                     }
                 }
