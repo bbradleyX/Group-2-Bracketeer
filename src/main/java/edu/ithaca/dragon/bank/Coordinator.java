@@ -62,15 +62,17 @@ public class Coordinator {
      * @param teamName name of the team to be removed
      */
     public void removeTeam(String tournamentName, String teamName){
+        boolean checker = false;
         for (int i = 0; i < tournaments.size(); i++){
             if (tournamentName.equalsIgnoreCase(tournaments.get(i).getName())){
                 for (int j = 0; j < tournaments.get(i).getTeams().size(); j++){
                     if (tournaments.get(i).getTeams().get(j).getTeamName().equalsIgnoreCase(teamName)){
                         tournaments.get(i).getTeams().remove(j);
+                        checker = true;
                     }
-                    else{
-                        System.out.println("No such team exists.");
-                    }
+                }
+                if (!checker){
+                    System.out.println("No such team is found.");
                 }
             }
             else{
@@ -82,19 +84,6 @@ public class Coordinator {
        //this method creates a bracket for a tournament
     public Void createBracket(Tournament tournament) {
         return null;
-    }
-
-      //This methods sees if any players have a time conflict
-      public boolean isTimeconflict(Pair<Double, Double> playerTime, double tournTime) {
-          if(tournTime < 0){
-              return false;
-            }
-          if(tournTime >= playerTime.getValue0() && tournTime <= playerTime.getValue1()){
-              return true;
-            }
-        else{
-            return false;
-        }
     }
 
     public ArrayList<Tournament> getTournaments(){

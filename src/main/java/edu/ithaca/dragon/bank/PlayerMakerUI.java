@@ -53,18 +53,18 @@ public class PlayerMakerUI {
         //Scanner scanner = new Scanner(System.in);  // Create a Scanner object
         
             System.out.println("Please enter your name:\n");
-            String name = scanner.nextLine();
+            String name = scanner.next();
             while(PlayerMakerUI.isNameVaild(name) != true){
                 System.out.println("Please enter your name again:\n");
-                name = scanner.nextLine();
+                name = scanner.next();
             }
             newName = name;
             
             System.out.println("Please enter your ID number\n");
-            String ID = scanner.nextLine();
+            String ID = scanner.next();
             while(PlayerMakerUI.isIDVaild(ID) != true){
                 System.out.println("Please only enter four digit for your ID:\n"); 
-                ID = scanner.nextLine();
+                ID = scanner.next();
             }
             newID = ID;
             
@@ -78,7 +78,7 @@ public class PlayerMakerUI {
                 catch (InputMismatchException e)
                 {
                     System.out.println("Your start time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n"); 
-                    scanner.nextLine();}
+                    scanner.next();}
             }
             double newStartTime = startTime;
             
@@ -90,7 +90,7 @@ public class PlayerMakerUI {
                 }
                 catch (InputMismatchException e){
                     System.out.println("Your end time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n");
-                    scanner.nextLine();
+                    scanner.next();
                 }
             }
             double newEndTime = endTime;
@@ -104,13 +104,13 @@ public class PlayerMakerUI {
         
     }
 
-    protected static void runModifyScheduleUI(Scanner scanner){        
+    protected static void runModifyScheduleUI(Scanner scanner, Player player){        
         System.out.println("Would you like to change your time? (yes or no)\n");
-        String answer = scanner.nextLine();
+        String answer = scanner.next();
          
         while(!(answer.equalsIgnoreCase("yes"))  || !(answer.equalsIgnoreCase("no"))){
             System.out.println("Please enter yes or no\n");
-            answer = scanner.nextLine();
+            answer = scanner.next();
 
             if(answer.equalsIgnoreCase("yes")){
                 startTime = -1;
@@ -122,7 +122,7 @@ public class PlayerMakerUI {
                     catch (InputMismatchException e)
                     {
                         System.out.println("Your start time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n"); 
-                        scanner.nextLine();}
+                        scanner.next();}
                 }
                 double newStartTimeTwo = startTime;
             
@@ -134,17 +134,17 @@ public class PlayerMakerUI {
                     }
                     catch (InputMismatchException e){
                         System.out.println("Your end time must be a double greater than 0 and less than 24, using increments of 0.25 for 15 minute blocks of time. Please enter it again:\n");
-                        scanner.nextLine();
+                        scanner.next();
                     }
                 }
                 double newEndTimeTwo = endTime;
 
-                Player player2 = new Player(newName, newID, newStartTimeTwo, newEndTimeTwo); 
+                //Player player2 = new Player(newName, newID, newStartTimeTwo, newEndTimeTwo); 
 
                 System.out.println("\n");
                 System.out.println("----------");
-                System.out.println(newName + ", you are now a player.\n" + "Your ID is " + newID + "\nYour new start time is at " +newStartTimeTwo + "\n" + "Your new end time is at " + newEndTimeTwo);
-                player2.modifySchedule(newStartTimeTwo, newEndTimeTwo);
+                System.out.println(player.getName() + ", your schedule has been modified" + "\nYour new start time is at " +newStartTimeTwo + "\n" + "Your new end time is at " + newEndTimeTwo);
+                player.modifySchedule(newStartTimeTwo, newEndTimeTwo);
                 break;
             }
             if(answer.equalsIgnoreCase("no")){
@@ -153,10 +153,4 @@ public class PlayerMakerUI {
             }
         }
     }
-
-    
-
 }
-
-
-    

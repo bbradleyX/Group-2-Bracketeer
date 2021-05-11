@@ -28,7 +28,7 @@ public class Team {
     }
 
     public static boolean isValidName(String teamName){ //A bug here, where it doesn't properly define an actual team name //Answer: a team name is up to the discretion of the players
-        if (teamName == "" || teamName == " "){
+        if (teamName.isBlank() || teamName.isEmpty()){
             return false;
         }
         else if(teamName.length() < 1){
@@ -49,11 +49,11 @@ public class Team {
         }
         if(teamsMap.size() < 1){
             System.out.println("Adding first new player "+ player.getName() +" to "+ teamName+ "...");
-            teamsMap.put(player, player.getPlayTime());
+            teamsMap.put(player, player.getSchedule());
         }
         else{
             System.out.println("Adding new player "+ player.getName() +" to "+ teamName+ "...");
-            teamsMap.put(player, player.getPlayTime());
+            teamsMap.put(player, player.getSchedule());
             }
         }
 
@@ -64,7 +64,7 @@ public class Team {
         else{
             Player playerToRemove = null;
             for ( Player key : teamsMap.keySet() ) {
-                if (key.getID() == playerID){
+                if (key.getID().equals(playerID)){
                     playerToRemove = key;
                 }
             }
@@ -82,7 +82,7 @@ public class Team {
         String info = "";
         for ( Player key : teamsMap.keySet() ) {
             if (key.getID() == playerID){
-                info += "Found Player "+ key.getID()+"->\t"+"Player Name: " + key.getName()+", PlayTime: "+ key.getPlayTime()+", Player Schedule: "+ key.getSchedule()+"\n";
+                info += "Found Player "+ key.getID()+"->\t"+"Player Name: " + key.getName()+", Player Schedule: "+ key.getSchedule()+"\n";
             }
         }
         if(info.isBlank()){
@@ -96,6 +96,28 @@ public class Team {
         return teamName;
     }
 
+    public LinkedHashMap<Player, Pair<Double, Double>> getTeam(){
+        return teamsMap;
+    }
+
+    public Player getPlayer(String playerID) throws IllegalArgumentException{
+        boolean found = false;
+        Player player = null;
+        for (Player key : teamsMap.keySet()){
+            if (key.getID() == playerID){
+                found = true;
+                player = key;
+            }
+        }
+        if(found == false){
+            throw new IllegalArgumentException("Player Not Found");
+        }
+        else{
+            return player;
+        }
+        
+    }
+
     public String getTeamInfo()throws Error{
         if (teamsMap.isEmpty()){
             throw new Error("Team is Empty");
@@ -104,7 +126,7 @@ public class Team {
             String info = "\nTeam Info For "+getTeamName()+ ":\n";
             for ( Player key : teamsMap.keySet() ) {
             Player player = key;
-            info += "Player ID: "+ player.getID() +", Player Name: " + player.getName()+", PlayTime: "+ player.getPlayTime().toString() + "\n";
+            info += "Player ID: "+ player.getID() +", Player Name: " + player.getName()+", Schedule: "+ player.getSchedule() + "\n";
             }
             return info;
         }
@@ -117,7 +139,7 @@ public class Team {
         while(iterator.hasNext()) {
             Map.Entry item = (Map.Entry)iterator.next();
             Player player = (Player) item.getKey();
-            scheduleInfo += "Player: "+ player.getName() +", PlayTime: "+ item.getValue()+ "\n";
+            scheduleInfo += "Player: "+ player.getName() +", Schedule: "+ item.getValue()+ "\n";
        }
        if(scheduleInfo.isBlank()){
         throw new IndexOutOfBoundsException("This team list is empty. There are no players in this team.");
