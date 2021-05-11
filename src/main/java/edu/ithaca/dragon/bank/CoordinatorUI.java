@@ -161,7 +161,9 @@ public class CoordinatorUI {
                         }
                         //Manage time conflicts
                         else if (actionSelection == 5){
-                            ;
+                            for (int i = 0; i < coordinator.getTournaments().get(tournamentIndex).getTeams().size(); i++){
+                                for (int j = 0; j < coordinator.getTournaments().get(tournamentIndex).getTeams().get(j).g
+                            }
                         }
                         //View teams in tournament
                         else if (actionSelection == 6){
