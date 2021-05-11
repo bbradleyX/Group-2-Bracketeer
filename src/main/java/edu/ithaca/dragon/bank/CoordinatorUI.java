@@ -177,7 +177,7 @@ public class CoordinatorUI {
                         //View players in a team
                         else if (actionSelection == 7){
                             for (int i = 0; i < coordinator.getTournaments().get(tournamentIndex).getTeams().size(); i++){
-                                System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i));
+                                System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeam().keySet());
                             }
                         }
                         //Create a round
