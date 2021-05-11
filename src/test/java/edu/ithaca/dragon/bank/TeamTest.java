@@ -6,6 +6,13 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 import java.security.InvalidParameterException;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.Map.Entry;
+
+import org.javatuples.Pair;
 import org.junit.jupiter.api.Test;
 
 
@@ -33,9 +40,95 @@ public class TeamTest {
 
        
     }
+    
     @Test
-    //Integral Tests for getting Player Member objects and Team Info
+    void addPlayerTest(){
+        Team team = createTeamForTest("Team");
+        Player a = new Player("Player 1", "0000", 9.0, 15.0);
+        Player b = new Player("Player 2", "0001", 18.0, 23.0);
+
+        team.addPlayer(a);
+        team.addPlayer(b);
+
+        //Valid Player Addition
+        assertEquals(a, team.getPlayer(a.getID()));
+        assertEquals(b, team.getPlayer("0001"));
+
+        //Invalid Player Addition
+        Throwable exception = assertThrows(IllegalArgumentException.class, () -> {team.getPlayer("0002");});
+        assertEquals("Player Not Found", exception.getMessage());
+
+    }
+
+
+    @Test
+    void removePlayerTest(){
+        Team team = createTeamForTest("Team");
+        Player a = new Player("Player 1", "0000", 9.0, 15.0);
+        Player b = new Player("Player 2", "0001", 18.0, 23.0);
+        Player c = new Player("Player 3", "0003", 14.0, 14.5);
+
+        team.addPlayer(a);
+        team.addPlayer(b);
+        team.addPlayer(c);
+
+        //Valid Player Removal
+        team.removePlayer(b.getID());
+        Throwable exception = assertThrows(IllegalArgumentException.class, () -> {team.getPlayer(b.getID());});
+        assertEquals("Player Not Found", exception.getMessage());
+
+        team.removePlayer("0003");
+        exception = assertThrows(IllegalArgumentException.class, () -> {team.getPlayer("0003");});
+        assertEquals("Player Not Found", exception.getMessage());
+
+        //Invalid Player Removal
+        exception = assertThrows(IllegalArgumentException.class, () -> {team.removePlayer("0002");});
+        assertEquals("Player Not Found", exception.getMessage());
+
+        
+    }
+   
+    //Unit Tests for getters
+    @Test
     void getTeamTest(){
+        Team team = createTeamForTest("Team");
+        Player a = new Player("Player 1", "0000", 9.0, 15.0);
+        Player b = new Player("Player 2", "0001", 18.0, 23.0);
+        Player c = new Player("Player 3", "0003", 14.0, 14.5);
+        Player d = new Player("Player 4", "0004", 10.0, 14.5);
+        Player e = new Player("Player 5", "0005", 14.0, 14.5);
+
+        team.addPlayer(a);
+        team.addPlayer(b);
+        team.addPlayer(c);
+        team.addPlayer(d);
+        team.addPlayer(e);
+  
+        // Go through LinkedHashMap Teammap 
+        System.out.println("\nElements in Team Map : \n");
+        team.getTeam().forEach((k,v) -> System.out.println("Player ID: "+k.getID()+"\tKey = "+ k + ", Value = " + v));
+        System.out.println(team.getTeam());
+
+        team.removePlayer(a.getID());
+        System.out.println("\nNew Elements in Team Map : removing player ID " +a.getID()+"\n");
+        team.getTeam().forEach((k,v) -> System.out.println("Player ID: "+k.getID()+"\tKey = "+ k + ", Value = " + v));
+        System.out.println(team.getTeam());
+
+        team.removePlayer(e.getID());
+        System.out.println("\nNew Elements in Team Map :removing player ID " +e.getID()+"\n");
+        team.getTeam().forEach((k,v) -> System.out.println("Player ID: "+k.getID()+"\tKey = "+ k + ", Value = " + v));
+        System.out.println(team.getTeam());
+
+        team.removePlayer(c.getID());
+        System.out.println("\nNew Elements in Team Map :removing player ID " +c.getID()+"\n");
+        team.getTeam().forEach((k,v) -> System.out.println("Player ID: "+k.getID()+"\tKey = "+ k + ", Value = " + v));
+        System.out.println(team.getTeam());
+        
+    }
+
+    
+    //Integral Tests for getting Player Member objects and Team Info
+    void getInfoFromTeamsTestPart1(){
         //Invalid Team
         Team team1 = createTeamForTest("Invalid Team");
         //Valid Team
@@ -52,7 +145,7 @@ public class TeamTest {
         team2.addPlayer(new Player("Amber", "0001", 9.0, 15.0));
         team2.addPlayer(new Player("Bria", "0002", 18.0, 23.0));
         team2.addPlayer(new Player("Eli", "0003", 5.0, 20.0));
-        team2.addPlayer(new Player("Nusi","0004", 13.0, 3.3));
+        team2.addPlayer(new Player("Nusi","0004", 3.0, 13.3));
 
         /* assertEquals("\nTeam Info For "+"Valid Team"+ ":\n"+
         "Player ID: "+ "0000" +", Player Name: " + "Adam"+", Schedule: "+ "[10.0, 11.0]" + "\n"+
@@ -113,7 +206,7 @@ public class TeamTest {
     }
 
     @Test
-    void getInfoFromTeamsTest(){
+    void getInfoFromTeamsTestPart2(){
         //Invalid Team
         Team team1 = createTeamForTest("Invalid Team");
         //Valid Team
@@ -134,7 +227,7 @@ public class TeamTest {
         a = new Player("Amber", "0001", 9.0, 15.0);
         Player b = new Player("Bria", "0002", 18.0, 23.0);
         Player e = new Player("Eli", "0003", 5.0, 20.0);
-        Player n = new Player("Nusi","0004", 13.0, 3.3);
+        Player n = new Player("Nusi","0004", 3.0, 13.3);
         
         team2.addPlayer(a);
         team2.addPlayer(b);
