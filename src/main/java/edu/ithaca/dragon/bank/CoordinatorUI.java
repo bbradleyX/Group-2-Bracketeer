@@ -171,13 +171,13 @@ public class CoordinatorUI {
                         //View teams in tournament
                         else if (actionSelection == 6){
                             for (int i = 0; i < coordinator.getTournaments().get(tournamentIndex).getTeams().size(); i++){
-                                System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().toString());
+                                System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeamInfo());
                             }
                         }
                         //View players in a team
                         else if (actionSelection == 7){
                             for (int i = 0; i < coordinator.getTournaments().get(tournamentIndex).getTeams().size(); i++){
-                                System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeamInfo());
+                                System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i));
                             }
                         }
                         //Create a round
