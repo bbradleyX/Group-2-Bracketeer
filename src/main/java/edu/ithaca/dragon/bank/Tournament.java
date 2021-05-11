@@ -83,6 +83,10 @@ public class Tournament {
         return this.games;
     }
 
+    public double getStartTime() {
+        return this.startTime;
+    }
+
     public boolean isRoundComplete(){
         if(games.isEmpty()){
             return true;
