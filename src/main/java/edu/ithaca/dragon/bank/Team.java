@@ -96,6 +96,10 @@ public class Team {
         return teamName;
     }
 
+    public LinkedHashMap<Player, Pair<Double, Double>> getTeam(){
+        return teamsMap;
+    }
+    
     public String getTeamInfo()throws Error{
         if (teamsMap.isEmpty()){
             throw new Error("Team is Empty");
