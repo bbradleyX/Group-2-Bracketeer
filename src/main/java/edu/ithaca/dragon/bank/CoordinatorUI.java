@@ -123,7 +123,7 @@ public class CoordinatorUI {
                         System.out.println("9. Update a round");
                         System.out.println("10. Main Menu");
                         int actionSelection = myScanner.nextInt();
-                        while (actionSelection < 1 || actionSelection > 7){
+                        while (actionSelection < 1 || actionSelection > 10){
                             System.out.println("Invalid input. Select a corresponding number for an action:");
                             actionSelection = myScanner.nextInt();
                         }
