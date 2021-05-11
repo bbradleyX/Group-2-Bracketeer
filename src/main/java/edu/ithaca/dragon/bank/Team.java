@@ -64,7 +64,7 @@ public class Team {
         else{
             Player playerToRemove = null;
             for ( Player key : teamsMap.keySet() ) {
-                if (key.getID() == playerID){
+                if (key.getID().equals(playerID)){
                     playerToRemove = key;
                 }
             }

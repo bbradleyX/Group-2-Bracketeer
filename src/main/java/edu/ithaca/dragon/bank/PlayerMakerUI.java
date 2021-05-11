@@ -99,12 +99,12 @@ public class PlayerMakerUI {
             System.out.println("----------");
             System.out.println(newName + ", you are now a player.\n" + "Your ID is " + newID + "\nYou will start at " +newStartTime + "\n" + "You will end at " + endTime + "\n");
             Player player1 = new Player(newName, newID, newStartTime, newEndTime);
-            
+        
             return (player1);
         
     }
 
-    protected static void runModifyScheduleUI(Scanner scanner, Player playerIn){        
+    protected static void runModifyScheduleUI(Scanner scanner, Player player){        
         System.out.println("Would you like to change your time? (yes or no)\n");
         String answer = scanner.next();
          
@@ -143,8 +143,8 @@ public class PlayerMakerUI {
 
                 System.out.println("\n");
                 System.out.println("----------");
-                playerIn.modifySchedule(newStartTimeTwo, newEndTimeTwo);
-                System.out.println(playerIn.getName() + ", your schedule has been modified" + "\nYour new start time is at " +newStartTimeTwo + "\n" + "Your new end time is at " + newEndTimeTwo);
+                System.out.println(player.getName() + ", your schedule has been modified" + "\nYour new start time is at " +newStartTimeTwo + "\n" + "Your new end time is at " + newEndTimeTwo);
+                player.modifySchedule(newStartTimeTwo, newEndTimeTwo);
                 break;
             }
             if(answer.equalsIgnoreCase("no")){
@@ -153,4 +153,7 @@ public class PlayerMakerUI {
             }
         }
     }
+
+    
+
 }

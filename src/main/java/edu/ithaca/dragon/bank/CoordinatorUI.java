@@ -119,8 +119,8 @@ public class CoordinatorUI {
                         System.out.println("3. Add players to a team");
                         System.out.println("4. Remove players from a team");
                         System.out.println("5. Manage time conflict");
-                        System.out.println("6. View teams in a tournament");
-                        System.out.println("7. View players in a team");
+                        System.out.println("6. View teams in tournament");
+                        System.out.println("7. View players in tournament");
                         System.out.println("8. Create a round");
                         System.out.println("9. Update a round");
                         System.out.println("10. Main Menu");
@@ -157,26 +157,23 @@ public class CoordinatorUI {
                             String removePlayerID = myScanner.next();
                             for (int i = 0; i < coordinator.getTournaments().get(tournamentIndex).getTeams().size(); i++){
                                 if (coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeamName().equalsIgnoreCase(removePlayerTeam)){
-                                    System.out.println(removePlayerID);
-                                    System.out.println(removePlayerTeam);
-                                    System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeamInfo());
-                                    //System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getPlayerInfo());
                                     coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).removePlayer(removePlayerID.toString());
-                                    //if(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).removePlayer(removePlayerID)){}
                                 }
                              }
                         } 
                         //Manage time conflicts
                         else if (actionSelection == 5){
-                            //Loop through teams
-                            for (int i = 0; i < coordinator.getTournaments().get(tournamentIndex).getTeams().size(); i++){
-                                //Loop through players
-                                for (Player key : coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeam().keySet()){
-                                    //If player start time is later than tournament start time
-                                    if (key.getSchedule().getValue0() > coordinator.getTournaments().get(tournamentIndex).getStartTime()){
-                                        System.out.println(key.getName() + " has time conflict! " + key.getName() + "'s availability begins at " + key.getSchedule().getValue0() + ", but the tournament starts at " + coordinator.getTournaments().get(tournamentIndex).getStartTime());
-                                        //Call runModifyScheduleUI for player
-                                        PlayerMakerUI.runModifyScheduleUI(myScanner, key);
+                            if (coordinator.getTournaments().get(tournamentIndex).isTimeconflict()){
+                                //Loop through teams
+                                for (int i = 0; i < coordinator.getTournaments().get(tournamentIndex).getTeams().size(); i++){
+                                    //Loop through players
+                                    for (Player key : coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeam().keySet()){
+                                        //If player start time is later than tournament start time
+                                        if (key.getSchedule().getValue0() > coordinator.getTournaments().get(tournamentIndex).getStartTime()){
+                                            System.out.println(key.getName() + " has time conflict! " + key.getName() + "'s availability begins at " + key.getSchedule().getValue0() + ", but the tournament starts at " + coordinator.getTournaments().get(tournamentIndex).getStartTime());
+                                            //Call runModifyScheduleUI for player
+                                            PlayerMakerUI.runModifyScheduleUI(myScanner, key);
+                                        }
                                     }
                                 }
                             }
@@ -184,13 +181,13 @@ public class CoordinatorUI {
                         //View teams in tournament
                         else if (actionSelection == 6){
                             for (int i = 0; i < coordinator.getTournaments().get(tournamentIndex).getTeams().size(); i++){
-                                System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeamInfo());
+                                System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeamName());
                             }
                         }
-                        //View players in a team
+                        //View players in tournament
                         else if (actionSelection == 7){
                             for (int i = 0; i < coordinator.getTournaments().get(tournamentIndex).getTeams().size(); i++){
-                                System.out.println(coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeam().keySet().iterator().next().getName());
+                                coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeam().forEach((k,v) -> System.out.println("Player Name: "+k.getName()+" Player ID: "+k.getID()+"\n"));
                             }
                         }
                         //Create a round
