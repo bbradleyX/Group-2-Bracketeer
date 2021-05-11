@@ -181,5 +181,17 @@ public class Tournament {
             }
         }
     }
+
+    //This methods sees if any players have a time conflict
+    public boolean isTimeconflict() {
+        for (int i = 0; i < teams.size(); i++){
+            for (Player key : teams.get(i).getTeam().keySet()){
+                if (key.getSchedule().getValue0() > startTime){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     //This will need more methods but non are on the diagram as of right now.
 }

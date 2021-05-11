@@ -123,7 +123,7 @@ public class CoordinatorUI {
                         System.out.println("9. Update a round");
                         System.out.println("10. Main Menu");
                         int actionSelection = myScanner.nextInt();
-                        while (actionSelection < 1 || actionSelection > 7){
+                        while (actionSelection < 1 || actionSelection > 10){
                             System.out.println("Invalid input. Select a corresponding number for an action:");
                             actionSelection = myScanner.nextInt();
                         }
@@ -167,8 +167,9 @@ public class CoordinatorUI {
                                 for (Player key : coordinator.getTournaments().get(tournamentIndex).getTeams().get(i).getTeam().keySet()){
                                     //If player start time is later than tournament start time
                                     if (key.getSchedule().getValue0() > coordinator.getTournaments().get(tournamentIndex).getStartTime()){
-                                        System.out.println(key.getName() + "has time conflict!");
-                                        Player.
+                                        System.out.println(key.getName() + " has time conflict! " + key.getName() + "'s availability begins at " + key.getSchedule().getValue0() + ", but the tournament starts at " + coordinator.getTournaments().get(tournamentIndex).getStartTime());
+                                        //Call runModifyScheduleUI for player
+                                        PlayerMakerUI.runModifyScheduleUI(myScanner, key);
                                     }
                                 }
                             }
@@ -183,7 +184,12 @@ public class CoordinatorUI {
                         }
                         //Create a round
                         else if (actionSelection == 8){
-                            coordinator.getTournaments().get(tournamentIndex).createRound();
+                            if (coordinator.getTournaments().get(tournamentIndex).isTimeconflict()){
+                                System.out.println("There are time conflicts! Please resolve them using option 5 in the tournament menu.");
+                            }
+                            else{
+                                coordinator.getTournaments().get(tournamentIndex).createRound();
+                            }
                         }
                         //Update a round
                         else if (actionSelection == 9){

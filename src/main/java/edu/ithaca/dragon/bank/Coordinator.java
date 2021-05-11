@@ -84,19 +84,6 @@ public class Coordinator {
         return null;
     }
 
-      //This methods sees if any players have a time conflict
-      public boolean isTimeconflict(Pair<Double, Double> playerTime, double tournTime) {
-          if(tournTime < 0){
-              return false;
-            }
-          if(tournTime >= playerTime.getValue0() && tournTime <= playerTime.getValue1()){
-              return true;
-            }
-        else{
-            return false;
-        }
-    }
-
     public ArrayList<Tournament> getTournaments(){
         return this.tournaments;
     }
